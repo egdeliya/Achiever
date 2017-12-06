@@ -39,7 +39,7 @@ export class AuthService {
 
         console.log("----name" + authState.displayName);
         this.updateUserData();
-        // this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
       });
   }
 
@@ -71,7 +71,7 @@ export class AuthService {
   loginGoogle() {
     console.log("----authenticated!!"+this.authenticated);
     if (this.authenticated) {
-      // this.router.navigate(['/home']);
+      this.router.navigate(['/home']);
       return;
     }
     const provider = new firebase.auth.GoogleAuthProvider()
@@ -84,7 +84,7 @@ export class AuthService {
         console.log(credential.user);
         this.authState = credential.user;
         this.updateUserData();
-        // this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
       })
       .catch(error => console.log(error));
   }

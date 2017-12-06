@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   /*align-items: center;*/
   margin: 0;
@@ -9,15 +10,15 @@
   background-color: rgb(99, 255, 219);
 }
 
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  max-width: 900px;
-}
+/*.wrapper {*/
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*max-width: 900px;*/
+/*}*/
 
 .achiever-icon {
-  /*display: flex;*/
-  /*float: right;*/
+  display: flex;
+  float: right;
   width: 45px;
   height: 45px;
 }

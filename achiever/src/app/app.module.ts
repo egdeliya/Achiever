@@ -15,14 +15,18 @@ import {AuthService} from './auth.service';
 import { routes } from './app.routes';
 import {AuthGuard} from "./auth.guard.service";
 import { HomeComponent } from './home/home.component';
-import {FeedGeneralComponent} from './feed/feed.component';
+import {FeedGeneralComponent} from './home/feed/feed.component';
+import { SidebarComponent } from './home/sidebar/sidebar.component';
+import { AchievementComponent } from './home/achievement/achievement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    FeedGeneralComponent
+    FeedGeneralComponent,
+    SidebarComponent,
+    AchievementComponent
   ],
   imports: [
     BrowserModule,
