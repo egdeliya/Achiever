@@ -1,35 +1,69 @@
-#lock {
-  width:40%;
-  margin: 1.5em auto 4em auto;
-  display:block;
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Lobster|Roboto');
+
+.container {
+  background-color: white;
+  border: solid 1px;
+  border-color: rgb(99, 255, 219);
+  width:350px;
+  position:fixed;
+  left:50%;
+  margin-left:-200px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-/*background: #fff  url('assets/images/google.svg') no-repeat 25px;*/
-
-#google {
-  border: 1px solid #95989A;
-  background-size: 25px;
+.achiever-icon {
+  width: 150px;
+  height: 150px;
 }
 
+.title {
+  /*color: white;*/
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  margin: 15px;
+  margin-bottom: 40px;
+}
 
+.description {
+  display: flex;
+  color: rgb(99, 255, 219);
+  text-align: center;
+  max-width: 200px;
+  font-family: 'Gochi Hand', cursive;
+  align-content: center;
+  margin: 15px;
+  margin-bottom: 50px;
+}
+
+.button-google {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2px;
+  border: none;
+  background-color: gainsboro;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sign-in-label-wrapper {
+  color: gray;
+  font-family: 'Gochi Hand', cursive;
+  text-align: center;
+}
 
 @media (max-width: 600px) {
   #page {
     padding:1em;
   }
-  #toolbar {
-    width:90%;
-    margin-left: -45%;
-  }
-  #fb {
-    background:#3B5998;
-  }
 
-  #google {
-    background: #fff;
-  }
-
-  #email {
-    background: #ECECEC;
-  }
 }

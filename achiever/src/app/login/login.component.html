@@ -1,9 +1,22 @@
-<div class="form-container">
-  <img src="assets/images/lock.svg" id="lock">
+<div class="container">
+  <h1 class="title">
+    <img class="achiever-icon" src="/assets/icon-web.png">
+     Achiever
+  </h1>
+
+  <p class="description">
+    Делись своими достижениями в нашем новом приложении Achiever!
+  </p>
+
 
   <span class="error" *ngIf="error">{{ error }}</span>
 
-  <button (click)="loginGoogle()" id="google">Login With Google</button>
-
-  <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+  <button (click)="loginGoogle()" class="button-google">
+    <img class="google-icon" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg">
+    <span class="sign-in-label-wrapper">
+      Войти через Google
+    </span>
+  </button>
 </div>
+
+

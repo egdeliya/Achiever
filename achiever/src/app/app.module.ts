@@ -8,8 +8,6 @@ import { AngularFireModule } from 'angularfire2';
 import {HttpModule} from "@angular/http";
 import {firebaseConfig} from "../environments/firebase.config";
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { OtherComponent } from './members/members.component';
 
 import { AuthGuard } from './auth.service';
 import { routes } from './app.routes';
@@ -18,8 +16,6 @@ import { routes } from './app.routes';
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent,
-    OtherComponent
   ],
   imports: [
     BrowserModule,
