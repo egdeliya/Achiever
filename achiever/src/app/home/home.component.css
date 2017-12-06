@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  /*align-items: center;*/
+  margin: 0;
+  padding: 10px 10em 10px 5rem;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(99, 255, 219);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+}
+
+.achiever-icon {
+  /*display: flex;*/
+  /*float: right;*/
+  width: 45px;
+  height: 45px;
+}
+
+.user-avatar {
+  border: 2px solid rgb(20, 204, 170);
+  border-radius: 50%;
+  margin-left: 10px;
+  width: 50px;
+  margin-right: 10px;
+  height: 50px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.progress-bar-border {
+  width: 100%;
+  border: solid rgb(20, 204, 170);
+  border-radius: 3px;
+  height: 20px;
+}
+
+.progress{
+  width:25%;
+  height: 100%;
+  border: none;
+  border-radius: 0px;
+  text-align: center;
+  align-content: center;
+  color: rgb(99, 255, 219);
+  background-color: rgb(20, 204, 170);
+}
+
+.user-name {
+  max-width: 100px;
+  overflow: inherit;
+  font-family: 'Gochi Hand', cursive;
+}
+
+@media (max-width: 600px) {
+  .user-name {
+    max-width: 100px;
+    font-family: 'Gochi Hand', cursive;
+  }
+}

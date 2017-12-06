@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 body {
+  padding: 0;
+  margin: auto;
   background: rgb(223, 245, 240);
-  padding-top:4em;
   color: rgb(20, 204, 170);
+  font-family: 'Gochi Hand', cursive;
 }
 
 .form-container {
@@ -74,7 +76,6 @@ button {
 
 @media (max-width: 600px) {
   body {
-    padding-top:1.2em;
   }
 
   .form-container {

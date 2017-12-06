@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Lobster|Roboto');
 
 .container {
+  margin-top: 50px;
   background-color: white;
   border: solid 1px;
   border-color: rgb(99, 255, 219);
@@ -65,5 +66,4 @@
   #page {
     padding:1em;
   }
-
 }

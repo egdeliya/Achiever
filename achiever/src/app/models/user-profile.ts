@@ -3,4 +3,5 @@ export interface UserProfile {
   id?: string,
   level: number,
   numberApprovedPosts: number
+  photoUrl: string
 }
