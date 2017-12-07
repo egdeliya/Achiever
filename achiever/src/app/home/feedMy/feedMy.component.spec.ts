@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeedComponent } from './feed.component';
+import { FeedComponent } from './feedMy.component';
 
 describe('FeedComponent', () => {
   let component: FeedComponent;
