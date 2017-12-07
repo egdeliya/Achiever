@@ -1,3 +1,4 @@
+
 /*------------------header------------------------*/
 .header {
   display: flex;
@@ -95,6 +96,7 @@
   height: 2000px;
   /*margin-top: 90px;*/
   margin-left: 20px;
+  max-width: 600px;
   /*margin-right: 200px;*/
 }
 
@@ -102,5 +104,14 @@
   .user-name {
     max-width: 100px;
     font-family: 'Gochi Hand', cursive;
+  }
+
+  .achiever-icon {
+    display: none;
+  }
+
+  .layout__side {
+    max-width: 50px;
+    font-size: 0.7em;
   }
 }

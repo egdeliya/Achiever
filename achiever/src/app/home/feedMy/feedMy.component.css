@@ -4,28 +4,56 @@
   /*background-color: #E2E4E6;*/
 /*}*/
 
+.container {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+/*----------------------add-achievement---------------*/
+
 .add-achievement {
   display: flex;
-  border: rgb(99, 255, 219) solid 1px;
+  /*border: rgb(99, 255, 219) solid 1px;*/
+  box-shadow: gray;
   border-radius: 2px;
   background-color: white;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  /*align-items: flex-end;*/
+  justify-content: flex-end;
 }
 
 .add-achievement-btn {
   padding: 2px;
   margin: 0;
+  font-size: 1em;
   color: rgb(99, 255, 219);
-  max-width: 50px;
-  border-left: rgb(99, 255, 219) solid 1px;
+  max-width: 85px;
+  border-left: whitesmoke solid 0.7px;
   outline: none;
 }
 
 .add-achievement-input {
-  /*text-align: center;*/
+  display: flex;
+  margin-right: auto;
+  /*float: left;*/
+  align-items: center;
   border: none;
+  padding: 0;
   padding-left: 5px;
   outline: none;
   color: rgb(99, 255, 219);
 }
+
+.photo-attach-icon {
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+  align-self: center;
+  /*text-align: center;*/
+}
+
+/*----------------------add-achievement---------------*/
+

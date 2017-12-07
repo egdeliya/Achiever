@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FeedBase} from "../feed.base";
+import {AchievementInfo} from "../../models/achievement-info";
 
 @Component({
   selector: 'app-feed',
@@ -7,6 +8,8 @@ import {FeedBase} from "../feed.base";
   styleUrls: ['./feedMy.component.css']
 })
 export class FeedMyComponent extends FeedBase {
+
+  isAddAchievementOpen: boolean = true;
 
   constructor() {
     super();
@@ -16,4 +19,11 @@ export class FeedMyComponent extends FeedBase {
   ngOnInit() {
   }
 
+  toggleAdd() {
+    this.isAddAchievementOpen = !this.isAddAchievementOpen;
+  }
+
+  onAddAchievement(newAchievement: AchievementInfo) {
+
+  }
 }

@@ -2,7 +2,8 @@
   /*margin-top: 30px;*/
   max-height: 300px;
   background-color: white;
-  border: rgb(99, 255, 219) solid 1px;
+  /*border: rgb(99, 255, 219) solid 1px;*/
+  box-shadow: gray;
   /*border-color: ;*/
   width:200px;
   position:sticky;

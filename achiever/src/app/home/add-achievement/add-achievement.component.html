@@ -1,4 +1,28 @@
-<p>
-  add-achievement works!
-</p>
+<!--<p>-->
+  <!--add-achievement works!-->
+<!--</p>-->
 
+<form [formGroup]="form" (submit)="onSubmit()" class="container">
+  <div class="form-group-custom">
+    <input formControlName="theme"
+           type="text"
+           class="form-control-custom"
+           placeholder="Тема достижения">
+    <!--<div class="invalid-feedback" automation-id="title-error">-->
+      <!--{{form.get('title').errors && getErrors(form.get('title').errors)}}-->
+    <!--</div>-->
+  </div>
+  <div class="form-group-custom ">
+    <textarea formControlName="body"
+           type="text"
+           class="form-control-custom large"
+           placeholder="Ваше достижение">
+    </textarea>
+  </div>
+  <div class="form-group-custom">
+    <button type="submit"
+            [disabled]="form.pristine || form.invalid"
+            class="btn-add-achievement">Готово
+    </button>
+  </div>
+</form>

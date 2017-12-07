@@ -13,20 +13,23 @@ import { AddAchievementComponent } from './add-achievement/add-achievement.compo
 // import {HttpModule} from "@angular/http";
 // import {FormsModule} from "@angular/forms";
 // import {BrowserModule} from "@angular/platform-browser";
+import {AddAchievementModule} from "./add-achievement/add-achievement.module";
 
 @NgModule({
   declarations: [
     FeedMyComponent,
     HomeComponent,
     SidebarComponent,
-    AchievementComponent,
-    AddAchievementComponent
+    AchievementComponent
+    // ,
+    // AddAchievementComponent
   ],
   imports: [
     CommonModule,
     // BrowserModule,
     // FormsModule,
     // HttpModule,
+    AddAchievementModule,
     RouterModule.forChild(homeRouter),
     // homeRoutes,
     AngularFireDatabaseModule,

@@ -2,8 +2,17 @@
   <!--feed works!-->
 <!--</p>-->
 <div class="add-achievement">
-  <input placeholder="Добавить достижение..." class="add-achievement-input"/>
-  <button class="add-achievement-btn">
-    Add!
+  <span class="add-achievement-input"
+        (click)="toggleAdd()">
+    Добавить достижение...
+  </span>
+  <img class="photo-attach-icon" src="/assets/photo-camera.svg"/>
+  <button
+    class="add-achievement-btn"
+    (click)="toggleAdd()">
+    {{isAddAchievementOpen ? 'Отменить' : 'Добавить'}}
   </button>
+</div>
+<div class="container" *ngIf="isAddAchievementOpen">
+  <app-add-achievement (addAchievement)="onAddAchievement($event)"></app-add-achievement>
 </div>

@@ -1,0 +1,44 @@
+.container {
+  background-color: white;
+  /*border: rgb(99, 255, 219) solid 1px;*/
+  box-shadow: gray;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+}
+
+.form-control-custom {
+  border: none;
+  /*height: 40px;*/
+  /*background-color: rgb(223, 245, 240);*/
+  box-shadow: none;
+  color: rgb(20, 204, 170);
+  border-bottom: whitesmoke solid 1px;
+}
+
+.form-control-custom:focus {
+  border-bottom: rgb(99, 255, 219) solid 1px;
+}
+
+.large {
+  height: 100px;
+  width: 100%;
+  text-align: match-parent;
+}
+
+.form-control-custom::placeholder {
+  color: rgb(99, 255, 219) ;
+  /*color: whitesmoke;*/
+}
+
+.btn-add-achievement {
+  border-radius: 3px;
+  padding: 5px;
+  width: 100px;
+  margin-left: 65%;
+  text-align: center;
+  color: white;
+  outline: none;
+  background-color: rgb(99, 255, 219);
+}
