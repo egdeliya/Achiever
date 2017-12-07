@@ -1,5 +1,6 @@
-<div class="header">
-  <!--<div class="wrapper">-->
+<div class="home">
+  <div class="header">
+    <!--<div class="wrapper">-->
     <div class="user-info">
       <img class="user-avatar" [src]="(user$ | async)?.photoUrl">
       <div class="user-info-level-wrapper">
@@ -10,8 +11,16 @@
       </div>
     </div>
     <img class="achiever-icon" src="/assets/icon-web.png">
-  <!--</div>-->
+    <!--</div>-->
+  </div>
+
+  <div class="layout">
+    <div class="layout__side">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="layout__main">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
 
-<app-sidebar></app-sidebar>
-<router-outlet></router-outlet>

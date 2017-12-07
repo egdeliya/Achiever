@@ -10,7 +10,11 @@
   </div>
   <div class="item-wrapper">
     <img class="sidebar-img" src="/assets/news.svg"/>
-    <span class="sidebar-label">Новости</span>
+    <a href="#"
+       routerLink="/feedsMy"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}"
+      class="sidebar-label">Новости</a>
   </div>
   <div class="item-wrapper">
     <img class="sidebar-img" src="/assets/settings.svg"/>

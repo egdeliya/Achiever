@@ -10,6 +10,7 @@ export class FeedMyComponent extends FeedBase {
 
   constructor() {
     super();
+    console.log("-----------FeedsMy hello!");
   }
 
   ngOnInit() {

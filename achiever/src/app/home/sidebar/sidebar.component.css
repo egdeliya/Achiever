@@ -1,5 +1,5 @@
 .container {
-  margin-top: 30px;
+  /*margin-top: 30px;*/
   max-height: 300px;
   background-color: white;
   border: rgb(99, 255, 219) solid 1px;
@@ -7,7 +7,7 @@
   width:200px;
   position:sticky;
   /*left:10%;*/
-  margin-left:5em;
+  /*margin-left:5em;*/
   display: flex;
   padding: 0;
   /*align-content: center;*/
@@ -43,10 +43,17 @@
   text-align: center;
   padding-top: 2px;
   padding-bottom: 2px;
+  outline: none;
+  color: rgb(20, 204, 170);
 }
 
 .sidebar-label:hover {
   outline: none;
   background-color: rgb(99, 255, 219)
+}
+
+.sidebar-label:focus, .sidebar-label:active {
+  outline: none;
+  /*background-color: rgb(99, 255, 219)*/
 }
 

@@ -2,7 +2,7 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 body {
   padding: 0;
-  margin: auto;
+  /*margin-top: -90px;*/
   background: rgb(223, 245, 240);
   color: rgb(20, 204, 170);
   font-family: 'Gochi Hand', cursive;

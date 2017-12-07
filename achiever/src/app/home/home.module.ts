@@ -9,6 +9,7 @@ import { AngularFireModule } from 'angularfire2';
 import {FeedMyComponent} from "./feedMy/feedMy.component";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
+import { AddAchievementComponent } from './add-achievement/add-achievement.component';
 // import {HttpModule} from "@angular/http";
 // import {FormsModule} from "@angular/forms";
 // import {BrowserModule} from "@angular/platform-browser";
@@ -18,7 +19,8 @@ import {RouterModule} from "@angular/router";
     FeedMyComponent,
     HomeComponent,
     SidebarComponent,
-    AchievementComponent
+    AchievementComponent,
+    AddAchievementComponent
   ],
   imports: [
     CommonModule,
