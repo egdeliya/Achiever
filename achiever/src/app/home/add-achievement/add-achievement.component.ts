@@ -1,6 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from "@angular/forms";
 import {AchievementInfo} from "../../models/achievement-info";
+import {FileUploaderService} from "../file-uploader.service";
+import {FileUpload} from "../file-upload";
+import * as firebase from "firebase";
 
 @Component({
   selector: 'app-add-achievement',
@@ -10,8 +13,17 @@ import {AchievementInfo} from "../../models/achievement-info";
 export class AddAchievementComponent implements OnInit {
   form: FormGroup;
   @Output() addAchievement = new EventEmitter<AchievementInfo>();
+  selectedFiles: FileList;
+  currentFileUpload: FileUpload;
+  progress: {percentage: number} = {percentage: 0};
+  photoUrl: string;
+  private basePath = '/images';
 
-  constructor(private formBuilder: FormBuilder) { }
+
+  constructor(private formBuilder: FormBuilder
+              // ,
+              // private uploadService: FileUploaderService
+  ) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -20,15 +32,60 @@ export class AddAchievementComponent implements OnInit {
     });
   }
 
+  selectFile(event) {
+    this.selectedFiles = event.target.files;
+    const file = this.selectedFiles.item(0);
+    this.currentFileUpload = new FileUpload(file);
+    this.pushFileToStorage(this.currentFileUpload, this.progress);
+  }
+
+  // upload() {
+  //   const file = this.selectedFiles.item(0);
+  //   this.currentFileUpload = new FileUpload(file);
+  //   this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress)
+  //   this.fileUrl = this.uploadService.photoUrl;
+  // }
+
+  pushFileToStorage(fileUpload: FileUpload, progress: {percentage: number}) {
+    const storageRef = firebase.storage().ref();
+    const uploadTask = storageRef.child(`${this.basePath}/${fileUpload.file.name}`).put(fileUpload.file);
+
+    uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot) => {
+        // in progress
+        const snap = snapshot as firebase.storage.UploadTaskSnapshot;
+        progress.percentage = Math.round((snap.bytesTransferred / snap.totalBytes) * 100)
+      },
+      (error) => {
+        // fail
+        console.log(error)
+
+      },
+      () => {
+        // success
+        fileUpload.url = uploadTask.snapshot.downloadURL;
+        // fileUpload.name = fileUpload.file.name;
+        this.saveFileData(fileUpload);
+
+      }
+    );
+  }
+
+  saveFileData(fileUpload) {
+    this.photoUrl = fileUpload.url;
+  }
+
   onSubmit() {
     if (this.form.invalid) {
       return;
     }
 
+    // this.photoUrl = this.uploadService.returnPhotoUrl();
     console.log("----theme"+this.form.value.theme);
     const achievement: AchievementInfo = {
       theme: this.form.value.theme,
-      text: this.form.value.body
+      text: this.form.value.body,
+      photoUrl: this.photoUrl
     };
 
     this.addAchievement.emit(achievement);

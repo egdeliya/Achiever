@@ -1,18 +1,16 @@
-import { ModuleWithProviders } from "@angular/core";
-import {RouterModule, Routes} from "@angular/router";
-import {HomeComponent} from "./home.component";
-import {FeedMyComponent} from "./feedMy/feedMy.component";
+import { Routes } from "@angular/router";
+import { HomeComponent } from "./home.component";
+import { FeedMyComponent } from "./feedMy/feedMy.component";
 
 
 export const homeRouter: Routes = [
-  { path: '', redirectTo: 'home/feedsMy', pathMatch: 'full' },
   { path: 'home',
-    component: HomeComponent,
     children: [
-      { path: 'feedsMy', component: FeedMyComponent }
-    ]},
-
-  // { path: 'a', component: FeedMyComponent }
+      { path: 'feedMy', component: FeedMyComponent  }
+    ],
+    component: HomeComponent,
+    pathMatch: 'full'
+  },
+  // { path: 'feedMy', component: FeedMyComponent  },
+  { path: '', redirectTo: 'home/feedMy', pathMatch: 'full' }
 ];
-
-// export const homeRoutes: ModuleWithProviders = RouterModule.forChild(homeRouter)

@@ -8,9 +8,6 @@
            type="text"
            class="form-control-custom"
            placeholder="Тема достижения">
-    <!--<div class="invalid-feedback" automation-id="title-error">-->
-      <!--{{form.get('title').errors && getErrors(form.get('title').errors)}}-->
-    <!--</div>-->
   </div>
   <div class="form-group-custom ">
     <textarea formControlName="body"
@@ -20,6 +17,22 @@
     </textarea>
   </div>
   <div class="form-group-custom">
+    <div *ngIf="currentFileUpload" class="progress" style="width:100%">
+      <div class="progress-bar progress-bar-info progress-bar-striped"
+           role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+           aria-valuemin="0" aria-valuemax="100"
+           [ngStyle]="{width:progress.percentage+'%'}">
+        {{progress.percentage}}%</div>
+    </div>
+
+    <label>
+      <img class="photo-attach-icon" src="/assets/photo-camera.svg"/>
+      <input type="file" (change)="selectFile($event)" class="invisible">
+    </label>
+
+    <!--<button class="btn-custom" [disabled]="!selectedFiles"-->
+            <!--(click)="upload()">Upload</button>-->
+
     <button type="submit"
             [disabled]="form.pristine || form.invalid"
             class="btn-add-achievement">Готово

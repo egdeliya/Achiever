@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -15,7 +15,12 @@ import {AuthService} from './auth.service';
 import {router} from './app.routes';
 import {AuthGuard} from "./auth.guard.service";
 import {HttpClientModule} from "@angular/common/http";
-import {RouterModule} from "@angular/router";
+import {Routes, RouterModule} from "@angular/router";
+import {HomeRoutingModule} from "./home/home-routing.module";
+// import { HomeComponent } from './home/home.component';
+
+// import {HomeComponent} from "./home/home.component";
+// import {FeedMyComponent} from "./home/feedMy/feedMy.component";
 // import { HomeComponent } from './home/home.component';
 // import {FeedMyComponent} from './home/feedMy/feedMy.component';
 // import { SidebarComponent } from './home/sidebar/sidebar.component';
@@ -26,20 +31,20 @@ import {RouterModule} from "@angular/router";
     AppComponent,
     LoginComponent,
     // HomeComponent,
-    // FeedMyComponent,
+    // FeedMyComponent
     // SidebarComponent,
     // AchievementComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    // HttpModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    // routes,
     HomeModule,
-    RouterModule.forRoot(router),
+    HomeRoutingModule,
+    RouterModule.forRoot(router,
+      { enableTracing: true }),
     AngularFireDatabaseModule
   ],
   providers: [

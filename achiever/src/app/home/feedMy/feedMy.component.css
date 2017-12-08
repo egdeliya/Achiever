@@ -39,6 +39,7 @@
   display: flex;
   margin-right: auto;
   /*float: left;*/
+  width: 100%;
   align-items: center;
   border: none;
   padding: 0;
@@ -47,13 +48,13 @@
   color: rgb(99, 255, 219);
 }
 
-.photo-attach-icon {
-  width: 20px;
-  height: 20px;
-  margin: 3px;
-  align-self: center;
-  /*text-align: center;*/
-}
+/*.photo-attach-icon {*/
+  /*width: 20px;*/
+  /*height: 20px;*/
+  /*margin: 3px;*/
+  /*align-self: center;*/
+  /*!*text-align: center;*!*/
+/*}*/
 
 /*----------------------add-achievement---------------*/
 

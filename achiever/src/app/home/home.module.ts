@@ -8,36 +8,27 @@ import { AngularFireModule } from 'angularfire2';
 // import {AppModule} from "../app.module";
 import {FeedMyComponent} from "./feedMy/feedMy.component";
 import {CommonModule} from "@angular/common";
-import {RouterModule} from "@angular/router";
-import { AddAchievementComponent } from './add-achievement/add-achievement.component';
-// import {HttpModule} from "@angular/http";
-// import {FormsModule} from "@angular/forms";
-// import {BrowserModule} from "@angular/platform-browser";
 import {AddAchievementModule} from "./add-achievement/add-achievement.module";
+import {FileUploaderService} from "./file-uploader.service";
+import {HomeRoutingModule} from "./home-routing.module";
 
 @NgModule({
   declarations: [
-    FeedMyComponent,
     HomeComponent,
+    FeedMyComponent,
     SidebarComponent,
     AchievementComponent
-    // ,
-    // AddAchievementComponent
   ],
   imports: [
     CommonModule,
-    // BrowserModule,
-    // FormsModule,
-    // HttpModule,
-    AddAchievementModule,
-    RouterModule.forChild(homeRouter),
-    // homeRoutes,
     AngularFireDatabaseModule,
     AngularFireModule,
-    // AppModule
+    AddAchievementModule,
+    HomeRoutingModule
   ],
   providers: [
-    {provide: LOCALE_ID, useValue: 'ru'}
+    {provide: LOCALE_ID, useValue: 'ru'},
+    FileUploaderService
   ],
   exports: [
     HomeComponent
