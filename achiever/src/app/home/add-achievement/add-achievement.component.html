@@ -25,17 +25,20 @@
         {{progress.percentage}}%</div>
     </div>
 
-    <label>
-      <img class="photo-attach-icon" src="/assets/photo-camera.svg"/>
-      <input type="file" (change)="selectFile($event)" class="invisible">
-    </label>
+    <div class="btn-wrapper">
+      <label>
+        <img class="photo-attach-icon" src="/assets/photo-camera.svg"/>
+        <input type="file" (change)="selectFile($event)" class="invisible">
+      </label>
 
-    <!--<button class="btn-custom" [disabled]="!selectedFiles"-->
-            <!--(click)="upload()">Upload</button>-->
+      <!--<button class="btn-custom" [disabled]="!selectedFiles"-->
+      <!--(click)="upload()">Upload</button>-->
 
-    <button type="submit"
-            [disabled]="form.pristine || form.invalid"
-            class="btn-add-achievement">Готово
-    </button>
+      <button type="submit"
+              [disabled]="form.pristine || form.invalid"
+              class="btn-add-achievement">Готово
+      </button>
+    </div>
+
   </div>
 </form>

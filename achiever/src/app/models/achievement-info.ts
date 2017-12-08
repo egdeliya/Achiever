@@ -6,6 +6,8 @@ export interface AchievementInfo {
   id?:string,
   // date: string,
   authorId?: string,
+  authorName?:string,
+  authPhoto?:string,
   photoUrl?: string,
   // массив пользователей, которые лайкнули достижение
   usersLikesId?: string[]

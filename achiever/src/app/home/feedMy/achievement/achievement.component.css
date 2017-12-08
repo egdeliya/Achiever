@@ -1,3 +1,66 @@
 .container {
   background-color: white;
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  box-shadow: lightgrey;
+}
+
+.user-avatar {
+  border: 2px solid rgb(20, 204, 170);
+  border-radius: 50%;
+  margin-left: 0;
+  width: 50px;
+  margin-right: 10px;
+  height: 50px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.progress-bar-border {
+  width: 100%;
+  border: solid rgb(20, 204, 170);
+  border-radius: 3px;
+  height: 20px;
+}
+
+.delete-btn {
+  height: 10px;
+  width: 10px;
+  margin-left: auto;
+}
+
+.progress{
+  width:25%;
+  height: 100%;
+  border: none;
+  border-radius: 0px;
+  text-align: center;
+  align-content: center;
+  color: rgb(99, 255, 219);
+  background-color: rgb(20, 204, 170);
+}
+
+.user-name {
+  max-width: 100px;
+  overflow: inherit;
+  font-family: 'Gochi Hand', cursive;
+}
+
+.achievements-content {
+  max-width: 97%;
+  min-height: 100px;
+}
+.content-wrapper {
+  border: none;
+  box-shadow: none;
+  color: rgb(20, 204, 170);
 }

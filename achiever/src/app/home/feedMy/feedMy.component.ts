@@ -15,44 +15,40 @@ import {AngularFireList, AngularFireObject} from "angularfire2/database/interfac
   styleUrls: ['./feedMy.component.css']
 })
 export class FeedMyComponent extends FeedBase implements OnInit {
-
   currentUserId: string;
-  achievements: string[] = [];
+  achievements: AchievementInfo[];
+  achievementsObs;
 
   isAddAchievementOpen: boolean = false;
 
-  constructor(private router: Router,
+  constructor(
               private db: AngularFireDatabase,
-              private authService: AuthService) {
+              private authService: AuthService
+  ) {
     super();
+
     this.achievements = [];
   }
 
   ngOnInit() {
-    console.log("-----------FeedsMy hello on init!");
     this.currentUserId = localStorage.getItem('userid');
-    console.log("cur user ---->", this.currentUserId);
-    console.log("achievements ---->", this.achievements);
+    this.achievementsObs = this.db.list('users/'+this.currentUserId + '/achievements/');
 
-      firebase.database().ref().child('user-achievements/' + this.currentUserId)
-      .on('child_added', (data) => {
-      //   console.log("data---->>> ", data.key);
-        // const  ach = new AchievementComponent(data.key);
-        console.log("sssssssssssssssss-->");
-        // this.achievements.push(data.key);
-        // this.addAchievementId(data.key);
-        console.log(this);
-        this.achievements.unshift(data.key);
-        // this.addAchievementService.addAchievement(data.key);
-      });
-
-    console.log("good by ---->", this.currentUserId);
-
-    console.log(this + "   ", this.achievements);
+    firebase.database().ref('user/'+this.currentUserId+'/achievements/')
+      .limitToLast(100).once('value', (snapshot) =>
+      snapshot.forEach((childSnapshot) => {
+        console.log("------------------child snap", childSnapshot.val());
+        this.achievements.unshift(childSnapshot.val());
+        return true;
+      }));
   }
 
-  addAchievementId(Id) {
-    this.achievements.unshift(Id);
+  delete(i) {
+    this.achievements.splice(i, 1);
+  }
+
+  addAchievementId(achievement) {
+    this.achievements.unshift(achievement);
   }
 
   toggleAdd() {
@@ -63,6 +59,8 @@ export class FeedMyComponent extends FeedBase implements OnInit {
 
     // console.log("---------------add");
 
+    newAchievement.authorName = localStorage.getItem('username');
+    newAchievement.authPhoto =localStorage.getItem('userphoto')
     newAchievement.authorId = localStorage.getItem('userid');
     newAchievement.usersLikesId = [];
     newAchievement.likesNumber = 0;
@@ -74,9 +72,12 @@ export class FeedMyComponent extends FeedBase implements OnInit {
     // console.log("-----------new key   ", newAchievementKey);
     let updates = {};
     updates['/achievements/' + newAchievementKey] = newAchievement;
-    updates['/user-achievements/' + newAchievement.authorId + '/' + newAchievementKey ] = true;
+    updates['/user/' + newAchievement.authorId + '/achievements/' + newAchievementKey ] = newAchievement;
 
     // console.log("---------------updates!", newAchievement);
+    newAchievement.id = newAchievementKey;
+
+    this.achievements.unshift(newAchievement);
 
     firebase.database().ref().update(updates).then();
 

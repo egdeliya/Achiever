@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Lobster|Roboto');
 
 .container {
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   background-color: white;
   border: solid 1px;
   border-color: rgb(99, 255, 219);
   width:350px;
   position:fixed;
+  max-height: 450px;
   left:50%;
   margin-left:-200px;
   display: flex;

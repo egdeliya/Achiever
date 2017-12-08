@@ -32,11 +32,19 @@
   /*color: whitesmoke;*/
 }
 
+.btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 40px;
+}
+
 .btn-add-achievement {
   border-radius: 3px;
   padding: 5px;
   width: 100px;
-  margin-left: 65%;
+  /*margin-left: 65%;*/
   text-align: center;
   color: white;
   outline: none;

@@ -57,4 +57,15 @@
 /*}*/
 
 /*----------------------list achievements---------------*/
+.list-group-item-custom {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
+.list-group-custom {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
