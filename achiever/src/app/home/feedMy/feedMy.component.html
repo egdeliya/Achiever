@@ -17,3 +17,12 @@
 <div class="container" *ngIf="isAddAchievementOpen">
   <app-add-achievement (addAchievement)="onAddAchievement($event)"></app-add-achievement>
 </div>
+<!--<app-achievement></app-achievement>-->
+<ul class="list-group-custom">
+  <li class="list-group-item-custom" *ngFor="let achievement of achievements; let i = index">
+    <!--i-->
+    <app-achievement
+      [achievementId]="achievement">
+    </app-achievement>
+  </li>
+</ul>

@@ -1,11 +1,11 @@
 import {LOCALE_ID, NgModule} from '@angular/core';
 import {HomeComponent} from "./home.component";
-import {AchievementComponent} from "./achievement/achievement.component";
+import {AchievementComponent} from "./feedMy/achievement/achievement.component";
 import {SidebarComponent} from "./sidebar/sidebar.component";
 import {homeRouter} from "./home.routes";
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import { AngularFireModule } from 'angularfire2';
-// import {AppModule} from "../app.module";
+import {AppModule} from "../app.module";
 import {FeedMyComponent} from "./feedMy/feedMy.component";
 import {CommonModule} from "@angular/common";
 import {AddAchievementModule} from "./add-achievement/add-achievement.module";
@@ -15,9 +15,9 @@ import {HomeRoutingModule} from "./home-routing.module";
 @NgModule({
   declarations: [
     HomeComponent,
+    AchievementComponent,
     FeedMyComponent,
-    SidebarComponent,
-    AchievementComponent
+    SidebarComponent
   ],
   imports: [
     CommonModule,

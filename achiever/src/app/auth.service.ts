@@ -121,10 +121,6 @@ export class AuthService {
       photoUrl: this.authState.photoURL,
       numberApprovedPosts: 0,
     };
-    // this.authState = credential.user;
-    // this.userId = this.authState.uid;
-    // this.name = this.authState.displayName;
-    // this.photoUrl = this.authState.photoURL;
 
     localStorage.setItem('username', this.authState.displayName);
     localStorage.setItem('userphoto', this.authState.photoURL);

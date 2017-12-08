@@ -4,7 +4,10 @@ import {AchievementInfo} from "../../models/achievement-info";
 import {Router} from "@angular/router";
 import {AngularFireDatabase} from "angularfire2/database";
 import {AuthService} from "../../auth.service";
+// import {AchievementComponent} from "./achievement/achievement.component";
 import * as firebase from "firebase";
+import {AchievementComponent} from "./achievement/achievement.component";
+import {AngularFireList, AngularFireObject} from "angularfire2/database/interfaces";
 
 @Component({
   selector: 'app-feed',
@@ -13,18 +16,43 @@ import * as firebase from "firebase";
 })
 export class FeedMyComponent extends FeedBase implements OnInit {
 
+  currentUserId: string;
+  achievements: string[] = [];
+
   isAddAchievementOpen: boolean = false;
 
   constructor(private router: Router,
               private db: AngularFireDatabase,
               private authService: AuthService) {
     super();
-    console.log("-----------FeedsMy hello!");
+    this.achievements = [];
   }
 
   ngOnInit() {
     console.log("-----------FeedsMy hello on init!");
-    // this.router.navigate(['/feedMy']);
+    this.currentUserId = localStorage.getItem('userid');
+    console.log("cur user ---->", this.currentUserId);
+    console.log("achievements ---->", this.achievements);
+
+      firebase.database().ref().child('user-achievements/' + this.currentUserId)
+      .on('child_added', (data) => {
+      //   console.log("data---->>> ", data.key);
+        // const  ach = new AchievementComponent(data.key);
+        console.log("sssssssssssssssss-->");
+        // this.achievements.push(data.key);
+        // this.addAchievementId(data.key);
+        console.log(this);
+        this.achievements.unshift(data.key);
+        // this.addAchievementService.addAchievement(data.key);
+      });
+
+    console.log("good by ---->", this.currentUserId);
+
+    console.log(this + "   ", this.achievements);
+  }
+
+  addAchievementId(Id) {
+    this.achievements.unshift(Id);
   }
 
   toggleAdd() {
@@ -33,26 +61,29 @@ export class FeedMyComponent extends FeedBase implements OnInit {
 
   onAddAchievement(newAchievement: AchievementInfo) {
 
-    console.log("---------------add");
+    // console.log("---------------add");
 
     newAchievement.authorId = localStorage.getItem('userid');
     newAchievement.usersLikesId = [];
     newAchievement.likesNumber = 0;
 
-    console.log("---------------new Achievement!", newAchievement);
+    // console.log("---------------new Achievement!", newAchievement);
 
     const newAchievementKey = firebase.database().ref().child('achievements').push().key;
 
-    console.log("-----------new key   ", newAchievementKey);
+    // console.log("-----------new key   ", newAchievementKey);
     let updates = {};
     updates['/achievements/' + newAchievementKey] = newAchievement;
     updates['/user-achievements/' + newAchievement.authorId + '/' + newAchievementKey ] = true;
 
-    console.log("---------------updates!", newAchievement);
+    // console.log("---------------updates!", newAchievement);
 
     firebase.database().ref().update(updates).then();
 
-    console.log("---------------updated!!!!!!!", newAchievement);
+    console.log("fuck ---->", this.currentUserId);
+
+
+    // console.log("---------------updated!!!!!!!", newAchievement);
 
     this.toggleAdd();
 
