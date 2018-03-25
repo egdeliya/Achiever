@@ -6,8 +6,9 @@ import {FeedMyComponent} from "./home/feedMy/feedMy.component";
 // import {HomeComponent} from "./home/home.component";
 
 export const router: Routes = [
-  { path: '', redirectTo: '/home', canActivate:[AuthGuard], pathMatch: 'full' },
-  { path: 'login', component: LoginComponent }
+  { path: '', redirectTo: '/login', canActivate:[AuthGuard], pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'feedMy', component: FeedMyComponent, canActivate: [AuthGuard]  }
   // { path: 'home',
   //   children: [
   //     {

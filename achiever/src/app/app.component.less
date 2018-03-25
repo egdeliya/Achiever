@@ -1,13 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../styles.less";
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-body {
-  background: #e3faf5;
-  height: 100%;
-  margin: 0;
-}
-.sidebar {
-  height: auto;
-}
+
 /*------------------page header------------------------*/
 .page_header {
   display: flex;
@@ -18,8 +11,9 @@ body {
   padding-right: 5em;
   width: 100%;
   height: 30px;
-  background-color: #63ffdb;
+  background-color: @main-theme-color;
 }
+
 .icon-exit {
   width: 20px;
   height: 20px;
@@ -27,58 +21,67 @@ body {
   margin: 0;
   cursor: pointer;
 }
+
 .achiever-icon {
   display: flex;
   margin-left: auto;
   width: 30px;
   height: 30px;
 }
+
 .user-avatar {
-  border: 2px solid #14ccaa;
+  border: 2px solid rgb(20, 204, 170);
   border-radius: 50%;
   margin-left: 10px;
   margin-right: 10px;
   width: 30px;
   height: 30px;
 }
+
 .user-info {
   display: flex;
   flex-direction: row;
 }
+
 .progress-bar-border {
   width: 100%;
-  border: solid #14ccaa;
+  border: solid rgb(20, 204, 170);
   border-radius: 3px;
   height: 20px;
 }
-.progress {
-  width: 25%;
+
+.progress{
+  width:25%;
   height: 100%;
   border: none;
   border-radius: 0px;
   text-align: center;
   align-content: center;
-  color: #63ffdb;
+  color: @main-theme-color;
   background-color: bor;
 }
+
 .user-name {
   max-width: 100px;
   overflow: inherit;
   font-family: 'Gochi Hand', cursive;
 }
+
 /*------------------page body------------------------*/
 .page_layout {
   position: relative;
   margin-top: 20px;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left:5em;
+  margin-right:5em;
   display: flex;
   height: 100vh;
 }
+
 .layout__side {
   flex: 0 0 200px;
   width: 200px;
 }
+
 .layout__content {
   flex: 1 1 auto;
   overflow: auto;
@@ -88,11 +91,13 @@ body {
   margin-left: 20px;
   max-width: 600px;
 }
+
 @media (max-width: 600px) {
   .user-name {
     max-width: 100px;
     font-family: 'Gochi Hand', cursive;
   }
+
   .achiever-icon {
     display: none;
   }

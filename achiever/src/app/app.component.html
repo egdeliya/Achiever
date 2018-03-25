@@ -1,1 +1,38 @@
-<router-outlet></router-outlet>
+<div class="page_header">
+  <img src="/assets/open-exit-door.svg" class="icon-exit" (click)="logout()" *ngIf="authService.authenticated"/>
+  <div class="user-info" *ngIf="authService.authenticated">
+    <!--<img class="user-avatar" [src]="(user$| async)?.photoUrl">-->
+    <img class="user-avatar" [src]="photoUrl">
+    <div class="user-info-level-wrapper">
+      <!--<span class="user-name">{{(user$ | async)?.name}}</span>-->
+      <span class="user-name">{{name}}</span>
+      <div class="progress-bar-border">
+        <span class="progress">Level</span>
+      </div>
+    </div>
+  </div>
+  <img class="achiever-icon" src="/assets/icon-web.png">
+</div>
+<div class="page_layout">
+  <div class="layout__side" *ngIf="authService.authenticated">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="layout__content">
+    <!--<div *ngIf="currentFileUpload" class="progress" style="width:400px">-->
+    <!--<div class="progress-bar progress-bar-info progress-bar-striped"-->
+    <!--role="progressbar" attr.aria-valuenow="{{progress.percentage}}"-->
+    <!--aria-valuemin="0" aria-valuemax="100"-->
+    <!--[ngStyle]="{width:progress.percentage+'%'}">-->
+    <!--{{progress.percentage}}%</div>-->
+    <!--</div>-->
+
+    <!--<label class="btn btn-default"> <input type="file"-->
+    <!--(change)="selectFile($event)">-->
+    <!--</label>-->
+
+    <!--<button class="btn-custom" [disabled]="!selectedFiles"-->
+    <!--(click)="upload()">Upload</button>-->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!--<router-outlet></router-outlet>-->

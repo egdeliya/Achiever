@@ -10,8 +10,7 @@ import * as firebase from 'firebase/app';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService,
-              private router: Router) {
+  constructor(private authService: AuthService, private router: Router)  {
   }
 
   ngOnInit() {

@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   name: string;
 
   constructor(private authService: AuthService,
-              private router: Router,
+              private router: Router
               // private uploadService: FileUploaderService
   ) {
   }
@@ -36,21 +36,5 @@ export class HomeComponent implements OnInit {
     this.photoUrl= localStorage.getItem('userphoto')
     console.log("------name  ", this.name);
   }
-
-  logout() {
-    // this.router.navigate(['../login']);
-    this.authService.logout();
-  }
-  //
-  // selectFile(event) {
-  //   this.selectedFiles = event.target.files;
-  // }
-  //
-  // upload() {
-  //   const file = this.selectedFiles.item(0);
-  //   // console.log("click!");
-  //   this.currentFileUpload = new FileUpload(file);
-  //   this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress)
-  // }
 
 }

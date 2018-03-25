@@ -1,6 +1,6 @@
 
 /*------------------header------------------------*/
-.header {
+.page_header {
   display: flex;
   flex-direction: row;
   /*position: fixed;*/

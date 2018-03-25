@@ -23,17 +23,20 @@ import {HomeRoutingModule} from "./home/home-routing.module";
 // import {FeedMyComponent} from "./home/feedMy/feedMy.component";
 // import { HomeComponent } from './home/home.component';
 // import {FeedMyComponent} from './home/feedMy/feedMy.component';
-// import { SidebarComponent } from './home/sidebar/sidebar.component';
+import { SidebarComponent } from './home/sidebar/sidebar.component';
+import {FeedMyComponent} from "./home/feedMy/feedMy.component";
+import {AchievementComponent} from "./home/feedMy/achievement/achievement.component";
+import {AddAchievementComponent} from "./home/add-achievement/add-achievement.component";
+import {AddAchievementModule} from "./home/add-achievement/add-achievement.module";
 // import { AchievementComponent } from './home/achievement/achievement.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    // HomeComponent,
-    // FeedMyComponent
-    // SidebarComponent,
-    // AchievementComponent
+    SidebarComponent,
+    FeedMyComponent,
+    AchievementComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +44,9 @@ import {HomeRoutingModule} from "./home/home-routing.module";
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    HomeModule,
-    HomeRoutingModule,
+    AddAchievementModule,
+    // HomeModule,
+    // HomeRoutingModule,
     RouterModule.forRoot(router,
       { enableTracing: true }),
     AngularFireDatabaseModule

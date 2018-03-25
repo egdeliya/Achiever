@@ -1,45 +1,45 @@
 <div class="home">
-  <div class="header">
-    <!--<div class="wrapper">-->
-    <img src="/assets/open-exit-door.svg" class="icon-exit" (click)="logout()"/>
-    <div class="user-info">
-      <!--<img class="user-avatar" [src]="(user$| async)?.photoUrl">-->
-      <img class="user-avatar" [src]="photoUrl">
-      <div class="user-info-level-wrapper">
-        <!--<span class="user-name">{{(user$ | async)?.name}}</span>-->
-        <span class="user-name">{{name}}</span>
-        <div class="progress-bar-border">
-          <span class="progress">Level</span>
-        </div>
-      </div>
-    </div>
-    <img class="achiever-icon" src="/assets/icon-web.png">
-    <!--</div>-->
-  </div>
-
-
-
-  <div class="layout">
-    <div class="layout__side">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div class="layout__main">
-      <!--<div *ngIf="currentFileUpload" class="progress" style="width:400px">-->
-        <!--<div class="progress-bar progress-bar-info progress-bar-striped"-->
-             <!--role="progressbar" attr.aria-valuenow="{{progress.percentage}}"-->
-             <!--aria-valuemin="0" aria-valuemax="100"-->
-             <!--[ngStyle]="{width:progress.percentage+'%'}">-->
-          <!--{{progress.percentage}}%</div>-->
+  <!--<div class="page_header">-->
+    <!--&lt;!&ndash;<div class="wrapper">&ndash;&gt;-->
+    <!--<img src="/assets/open-exit-door.svg" class="icon-exit" (click)="logout()"/>-->
+    <!--<div class="user-info">-->
+      <!--&lt;!&ndash;<img class="user-avatar" [src]="(user$| async)?.photoUrl">&ndash;&gt;-->
+      <!--<img class="user-avatar" [src]="photoUrl">-->
+      <!--<div class="user-info-level-wrapper">-->
+        <!--&lt;!&ndash;<span class="user-name">{{(user$ | async)?.name}}</span>&ndash;&gt;-->
+        <!--<span class="user-name">{{name}}</span>-->
+        <!--<div class="progress-bar-border">-->
+          <!--<span class="progress">Level</span>-->
+        <!--</div>-->
       <!--</div>-->
+    <!--</div>-->
+    <!--<img class="achiever-icon" src="/assets/icon-web.png">-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--</div>-->
 
-      <!--<label class="btn btn-default"> <input type="file"-->
-                                             <!--(change)="selectFile($event)">-->
-      <!--</label>-->
 
-      <!--<button class="btn-custom" [disabled]="!selectedFiles"-->
-              <!--(click)="upload()">Upload</button>-->
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+
+  <!--<div class="layout">-->
+    <!--<div class="layout__side">-->
+      <!--<app-sidebar></app-sidebar>-->
+    <!--</div>-->
+    <!--<div class="layout__main">-->
+      <!--&lt;!&ndash;<div *ngIf="currentFileUpload" class="progress" style="width:400px">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="progress-bar progress-bar-info progress-bar-striped"&ndash;&gt;-->
+             <!--&lt;!&ndash;role="progressbar" attr.aria-valuenow="{{progress.percentage}}"&ndash;&gt;-->
+             <!--&lt;!&ndash;aria-valuemin="0" aria-valuemax="100"&ndash;&gt;-->
+             <!--&lt;!&ndash;[ngStyle]="{width:progress.percentage+'%'}">&ndash;&gt;-->
+          <!--&lt;!&ndash;{{progress.percentage}}%</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+      <!--&lt;!&ndash;<label class="btn btn-default"> <input type="file"&ndash;&gt;-->
+                                             <!--&lt;!&ndash;(change)="selectFile($event)">&ndash;&gt;-->
+      <!--&lt;!&ndash;</label>&ndash;&gt;-->
+
+      <!--&lt;!&ndash;<button class="btn-custom" [disabled]="!selectedFiles"&ndash;&gt;-->
+              <!--&lt;!&ndash;(click)="upload()">Upload</button>&ndash;&gt;-->
+      <!--<router-outlet></router-outlet>-->
+    <!--</div>-->
+  <!--</div>-->
 </div>
 

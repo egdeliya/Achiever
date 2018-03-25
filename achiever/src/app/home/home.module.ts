@@ -16,8 +16,8 @@ import {HomeRoutingModule} from "./home-routing.module";
   declarations: [
     HomeComponent,
     AchievementComponent,
-    FeedMyComponent,
-    SidebarComponent
+    FeedMyComponent
+    // SidebarComponent
   ],
   imports: [
     CommonModule,
