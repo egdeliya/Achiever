@@ -47,7 +47,7 @@ export class AuthService {
 
         // console.log("----name" + authState.displayName);
         this.updateUserData();
-        this.router.navigate(['/home']);
+        this.router.navigate(['/feedMy']);
       });
   }
 
@@ -82,7 +82,7 @@ export class AuthService {
       // this.userId = this.authState.uid;
       // this.name = this.authState.displayName;
       // this.photoUrl = this.authState.photoURL;
-      this.router.navigate(['/home']);
+      this.router.navigate(['/feedMy']);
 
 
       return;
@@ -98,9 +98,8 @@ export class AuthService {
 
 
         this.updateUserData();
-        // this.redirectUrl = '/home';
 
-        this.router.navigate(['/home']);
+        this.router.navigate(['/feedMy']);
       })
       .catch(error => console.log(error));
   }
@@ -108,7 +107,8 @@ export class AuthService {
   //// Sign Out ////
   logout(): void {
     this.firebaseAuth.auth.signOut();
-    this.router.navigate(['/login'], {relativeTo: this.route})
+    // this.router.navigate(['/login'], {relativeTo: this.route})
+    // this.authState = null;
   }
 
   //// Helpers ////

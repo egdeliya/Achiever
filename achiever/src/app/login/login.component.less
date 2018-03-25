@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Lobster|Roboto');
+
+@import "../../styles.less";
+
+.container {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: white;
+  color: @text-color;
+  border: solid 1px @border-color;
+  width: 200px;
+  height: 90px;
+  //left:50%;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.achiever-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.title {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  margin: 15px 40px;
+}
+
+.description {
+  display: flex;
+  text-align: center;
+  max-width: 200px;
+  font-family: 'Gochi Hand', cursive;
+  align-content: center;
+  margin: 15px 50px;
+  //margin-bottom: ;
+}
+
+.button-google {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 2px;
+  border: none;
+  background-color: gainsboro;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sign-in-label-wrapper {
+  color: gray;
+  font-family: 'Gochi Hand', cursive;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  #page {
+    padding:1em;
+  }
+}
