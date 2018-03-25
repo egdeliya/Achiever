@@ -9,25 +9,25 @@ import { AngularFireModule } from 'angularfire2';
 // import {HttpModule} from "@angular/http";
 import {firebaseConfig} from "../environments/firebase.config";
 import { LoginComponent } from './login/login.component';
-import {HomeModule} from "./home/home.module";
+// import {HomeModule} from "./home/home.module";
 import {AuthService} from './auth.service';
 
 import {router} from './app.routes';
 import {AuthGuard} from "./auth.guard.service";
 import {HttpClientModule} from "@angular/common/http";
 import {Routes, RouterModule} from "@angular/router";
-import {HomeRoutingModule} from "./home/home-routing.module";
+// import {HomeRoutingModule} from "./home/home-routing.module";
 // import { HomeComponent } from './home/home.component';
 
 // import {HomeComponent} from "./home/home.component";
 // import {FeedMyComponent} from "./home/feedMy/feedMy.component";
 // import { HomeComponent } from './home/home.component';
 // import {FeedMyComponent} from './home/feedMy/feedMy.component';
-import { SidebarComponent } from './home/sidebar/sidebar.component';
-import {FeedMyComponent} from "./home/feedMy/feedMy.component";
-import {AchievementComponent} from "./home/feedMy/achievement/achievement.component";
-import {AddAchievementComponent} from "./home/add-achievement/add-achievement.component";
-import {AddAchievementModule} from "./home/add-achievement/add-achievement.module";
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {FeedMyComponent} from "./feedMy/feedMy.component";
+import {AchievementComponent} from "./feedMy/achievement/achievement.component";
+import {AddAchievementComponent} from "./add-achievement/add-achievement.component";
+import {AddAchievementModule} from "./add-achievement/add-achievement.module";
 // import { AchievementComponent } from './home/achievement/achievement.component';
 
 @NgModule({

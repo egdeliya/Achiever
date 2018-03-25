@@ -3,7 +3,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 import * as firebase from 'firebase';
 
 import {FileUpload} from './file-upload';
-import {AuthService} from "../auth.service";
+import {AuthService} from "./auth.service";
 
 @Injectable()
 export class FileUploaderService {

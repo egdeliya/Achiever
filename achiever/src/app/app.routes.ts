@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard.service';
-import {FeedMyComponent} from "./home/feedMy/feedMy.component";
+import {FeedMyComponent} from "./feedMy/feedMy.component";
 // import {HomeComponent} from "./home/home.component";
 
 export const router: Routes = [

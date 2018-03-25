@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import * as firebase from "firebase";
-import {AchievementInfo} from "../../../models/achievement-info";
-import {UserProfile} from "../../../models/user-profile";
+import {AchievementInfo} from "../../models/achievement-info";
+import {UserProfile} from "../../models/user-profile";
 
 @Component({
   selector: 'app-achievement',

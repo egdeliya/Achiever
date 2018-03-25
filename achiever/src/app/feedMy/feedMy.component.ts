@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FeedBase} from "../feed.base";
-import {AchievementInfo} from "../../models/achievement-info";
+import {AchievementInfo} from "../models/achievement-info";
 import {Router} from "@angular/router";
 import {AngularFireDatabase} from "angularfire2/database";
-import {AuthService} from "../../auth.service";
+import {AuthService} from "../auth.service";
 // import {AchievementComponent} from "./achievement/achievement.component";
 import * as firebase from "firebase";
 import {AchievementComponent} from "./achievement/achievement.component";
