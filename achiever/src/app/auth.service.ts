@@ -1,7 +1,7 @@
-import {ActivatedRoute, CanActivate, Router} from '@angular/router';
-import { AngularFireAuth } from "angularfire2/auth";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Rx";
+import {ActivatedRoute, Router} from '@angular/router';
+import {AngularFireAuth} from "angularfire2/auth";
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs/Rx";
 
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
@@ -15,9 +15,7 @@ import {AngularFireDatabase} from "angularfire2/database";
 export class AuthService {
   user$ = new ReplaySubject<UserProfile>(1);
   authState: any = null;
-  userId: string;
-  photoUrl: string;
-  name: string;
+  TAG: string = " [Auth service] ";
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -26,7 +24,7 @@ export class AuthService {
 
     this.firebaseAuth.authState
       .subscribe((authState) => {
-        console.log('--- authState', authState);
+        console.log(this.TAG + '---> authState', authState);
         if (!authState) {
           this.user$.next(null);
           return;
@@ -41,13 +39,9 @@ export class AuthService {
           numberApprovedPosts: 0
         });
 
-        this.userId = authState.uid;
-        this.name = authState.displayName;
-        this.photoUrl = authState.photoURL;
-
-        // console.log("----name" + authState.displayName);
         this.updateUserData();
-        this.router.navigate(['/feedMy']);
+        this.router.navigate(['/feedMy']).
+          catch( reason => console.log(this.TAG + "routing failed in constructor: "));
       });
   }
 
@@ -68,7 +62,7 @@ export class AuthService {
 
   // Returns
   get currentUserObservable(): any {
-    return this.firebaseAuth.authState
+    return this.firebaseAuth.authState;
   }
 
   // Returns current user UID
@@ -76,39 +70,44 @@ export class AuthService {
     return this.authenticated ? this.authState.uid : '';
   }
 
-  loginGoogle() {
-    console.log("----authenticated!!"+this.authenticated);
-    if (this.authenticated) {
-      // this.userId = this.authState.uid;
-      // this.name = this.authState.displayName;
-      // this.photoUrl = this.authState.photoURL;
-      this.router.navigate(['/feedMy']);
+  get currentUserName(): string {
+    return this.authenticated ? this.authState.displayName : '';
+  }
 
+  get currentUserPhotoUrl(): string {
+    return this.authenticated ? this.authState.photoURL : '';
+  }
+
+  loginGoogle() {
+    console.log(this.TAG + "----authenticated value is: " + this.authenticated);
+    if (this.authenticated) {
+
+      this.router.navigate(['/feedMy'])
+        .catch( reason => console.log(this.TAG + "routing failed in loginGoogle: " + reason));
 
       return;
     }
-    const provider = new firebase.auth.GoogleAuthProvider()
+    const provider = new firebase.auth.GoogleAuthProvider();
     return this.socialSignIn(provider);
   }
 
   private socialSignIn(provider) {
     return this.firebaseAuth.auth.signInWithPopup(provider)
       .then((credential) =>  {
-        console.log(credential.user);
-
 
         this.updateUserData();
 
-        this.router.navigate(['/feedMy']);
+        this.router.navigate(['/feedMy']).
+        catch( reason => console.log(this.TAG + "routing failed in socialSignIn: " + reason));
       })
-      .catch(error => console.log(error));
+      .catch(error => console.log(this.TAG + "signIn failed: " + error));
   }
 
   //// Sign Out ////
   logout(): void {
-    this.firebaseAuth.auth.signOut();
-    // this.router.navigate(['/login'], {relativeTo: this.route})
-    // this.authState = null;
+    this.firebaseAuth.auth.signOut()
+      .then(() => location.reload())
+      .catch((reason => console.log(this.TAG + "-------------> logout out failed: " + reason)));
   }
 
   //// Helpers ////
@@ -119,17 +118,11 @@ export class AuthService {
       level: 0,
       id: this.authState.uid,
       photoUrl: this.authState.photoURL,
-      numberApprovedPosts: 0,
+      numberApprovedPosts: 0
     };
 
-    localStorage.setItem('username', this.authState.displayName);
-    localStorage.setItem('userphoto', this.authState.photoURL);
-    localStorage.setItem('userid', this.currentUserId);
-
-    this.userId = this.authState.uid;
     this.firebaseDataBase.object(path).update(data)
-      .catch(error => console.log(error));
-
+      .catch(error => console.log(this.TAG + "--------------------> failed to upload data: " + error));
   }
 
 }

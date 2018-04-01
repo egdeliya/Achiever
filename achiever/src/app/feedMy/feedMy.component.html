@@ -13,18 +13,18 @@
   <app-add-achievement (addAchievement)="onAddAchievement($event)"></app-add-achievement>
 </div>
 <ul class="list-group-custom">
-  <li class="list-group-item-custom" *ngFor="let achievement of achievements; let i = index">
+  <li class="list-group-item-custom" *ngFor="let achievement of (achievementsObs$ | async); let i = index">
     <app-achievement
-      [index]="i"
-      [text]="achievement.text"
-      [authId]="achievement.authorId"
-      [achPhoto]="achievement.photoUrl"
-      [authPhoto]="achievement.authPhoto"
-      [authName]="achievement.authorName"
-      [authLikes]="achievement.likesNumber"
-      [achievementId]="achievement.id"
-      (index)="delete($event)"
-    >
+      [achievementInfo]="achievement"
+      <!--[index]="i"-->
+      <!--[text]="achievement.text"-->
+      <!--[authId]="achievement.authorId"-->
+      <!--[achPhoto]="achievement.photoUrl"-->
+      <!--[authPhoto]="achievement.authPhoto"-->
+      <!--[authName]="achievement.authorName"-->
+      <!--[authLikes]="achievement.likesNumber"-->
+      <!--[achievementId]="achievement.id"-->
+      <!--(index)="delete($event)"-->
     </app-achievement>
   </li>
 </ul>

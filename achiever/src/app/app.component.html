@@ -1,11 +1,10 @@
+<!-------------------page header panel----------------->
 <div class="page_header">
   <img src="/assets/open-exit-door.svg" class="icon-exit" (click)="logout()" *ngIf="authService.authenticated"/>
   <div class="user-info" *ngIf="authService.authenticated">
-    <!--<img class="user-avatar" [src]="(user$| async)?.photoUrl">-->
-    <img class="user-avatar" [src]="photoUrl">
+    <img class="user-avatar" [src]="(authService.user$| async)?.photoUrl">
     <div class="user-info-level-wrapper">
-      <!--<span class="user-name">{{(user$ | async)?.name}}</span>-->
-      <span class="user-name">{{name}}</span>
+      <span class="user-name">{{(authService.user$| async)?.name}}</span>
       <div class="progress-bar-border">
         <span class="progress">Level</span>
       </div>
@@ -13,10 +12,16 @@
   </div>
   <img class="achiever-icon" src="/assets/icon-web.png">
 </div>
+
+<!-------------------page layout----------------->
 <div class="page_layout">
+
+  <!-------------------page side bar----------------->
   <div class="page_layout__side" *ngIf="authService.authenticated">
     <app-sidebar></app-sidebar>
   </div>
+
+  <!-------------------page content----------------->
   <div class="page_layout__content">
     <app-login *ngIf="!authService.authenticated"></app-login>
     <router-outlet *ngIf="authService.authenticated"></router-outlet>

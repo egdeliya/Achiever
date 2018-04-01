@@ -1,13 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FeedBase} from "../feed.base";
 import {AchievementInfo} from "../models/achievement-info";
-import {Router} from "@angular/router";
-import {AngularFireDatabase} from "angularfire2/database";
+import {AngularFireDatabase, AngularFireList} from "angularfire2/database";
 import {AuthService} from "../auth.service";
-// import {AchievementComponent} from "./achievement/achievement.component";
 import * as firebase from "firebase";
-import {AchievementComponent} from "./achievement/achievement.component";
-import {AngularFireList, AngularFireObject} from "angularfire2/database/interfaces";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-feed',
@@ -17,37 +14,45 @@ import {AngularFireList, AngularFireObject} from "angularfire2/database/interfac
 export class FeedMyComponent extends FeedBase implements OnInit {
   currentUserId: string;
   achievements: AchievementInfo[];
-  achievementsObs;
-
+  usersPerAchievementRef;
+  TAG: string = " [ FeedMyComponent] ";
   isAddAchievementOpen: boolean = false;
 
-  constructor(
-              private db: AngularFireDatabase,
-              private authService: AuthService
-  ) {
+  constructor( private db,
+              private authService: AuthService ) {
     super();
-
     this.achievements = [];
   }
 
   ngOnInit() {
-    this.currentUserId = localStorage.getItem('userid');
-    this.achievementsObs = this.db.list('users/'+this.currentUserId + '/achievements/');
+    this.currentUserId = this.authService.currentUserId;
+    this.usersPerAchievementRef = this.db.ref("usersPerAchievements/" + this.currentUserId);
 
-    firebase.database().ref('user/'+this.currentUserId+'/achievements/')
+    // this.usersPerAchievementRef.on('child_added')
+    // this.usersPerAchievementRef$ = this.db.list('users/' + this.currentUserId + '/achievements/');
+
+    console.log(this.TAG + "---------------------------> achievements observable " + this.achievementsObs$);
+
+    // this.usersPerAchievementRef.on('child_added', function(data) {
+    //   this.addAchievement(data.val());
+    // });
+
+    firebase.database().ref("/usersPerAchievements/" + this.currentUserId)
       .limitToLast(100).once('value', (snapshot) =>
       snapshot.forEach((childSnapshot) => {
-        console.log("------------------child snap", childSnapshot.val());
-        this.achievements.unshift(childSnapshot.val());
+        // console.log("------------------child snap", childSnapshot.val());
+        // this.achievements.unshift(childSnapshot.val());
+
         return true;
-      }));
+      }))
+      .catch(error => console.log(this.TAG + "achievements init failed: " + error));
   }
 
   delete(i) {
     this.achievements.splice(i, 1);
   }
 
-  addAchievementId(achievement) {
+  addAchievement(achievement) {
     this.achievements.unshift(achievement);
   }
 
@@ -59,9 +64,9 @@ export class FeedMyComponent extends FeedBase implements OnInit {
 
     // console.log("---------------add");
 
-    newAchievement.authorName = localStorage.getItem('username');
-    newAchievement.authPhoto =localStorage.getItem('userphoto')
-    newAchievement.authorId = localStorage.getItem('userid');
+    newAchievement.authorName = this.authService.currentUserName;
+    newAchievement.authPhoto = this.authService.currentUserPhotoUrl;
+    newAchievement.authorId = this.authService.currentUserId;
     newAchievement.usersLikesId = [];
     newAchievement.likesNumber = 0;
 
@@ -72,16 +77,16 @@ export class FeedMyComponent extends FeedBase implements OnInit {
     // console.log("-----------new key   ", newAchievementKey);
     let updates = {};
     updates['/achievements/' + newAchievementKey] = newAchievement;
-    updates['/user/' + newAchievement.authorId + '/achievements/' + newAchievementKey ] = newAchievement;
+    updates['/usersPerAchievements/' + newAchievement.authorId] = newAchievementKey;
 
     // console.log("---------------updates!", newAchievement);
     newAchievement.id = newAchievementKey;
 
-    this.achievements.unshift(newAchievement);
+    // this.achievements.unshift(newAchievement);
 
     firebase.database().ref().update(updates).then();
 
-    console.log("fuck ---->", this.currentUserId);
+    // console.log("fuck ---->", this.currentUserId);
 
 
     // console.log("---------------updated!!!!!!!", newAchievement);
