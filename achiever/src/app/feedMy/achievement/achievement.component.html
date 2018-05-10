@@ -1,14 +1,15 @@
 <div class="container" *ngIf="!removed">
   <div class="user-info">
-    <img class="user-avatar" [src]="achievementInfo.authPhoto">
+    <img class="user-avatar" [src]="achievement.authPhoto">
     <div class="user-info-level-wrapper">
-      <span class="user-name">{{achievementInfo.authorName}}</span>
+      <span class="user-name">{{achievement.authorName}}</span>
       <div class="progress-bar-border">
         <span class="progress">Level</span>
       </div>
     </div>
     <img src="/assets/delete.svg" class="delete-btn" (click)="OnDeleteClick()"/>
   </div>
-  <img [src]="achievementInfo.photoUrl" class="achievements-content"/>
-  <textarea class="content-wrapper">{{achievementInfo.text}}</textarea>
+  <textarea class="content-wrapper">{{achievement.theme}}</textarea>
+  <img *ngIf="achievement.photoUrl" [src]="achievement.photoUrl" class="achievements-content"/>
+  <textarea class="content-wrapper">{{achievement.text}}</textarea>
 </div>

@@ -21,8 +21,6 @@ export class AddAchievementComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder
-              // ,
-              // private uploadService: FileUploaderService
   ) { }
 
   ngOnInit() {
@@ -39,12 +37,6 @@ export class AddAchievementComponent implements OnInit {
     this.pushFileToStorage(this.currentFileUpload, this.progress);
   }
 
-  // upload() {
-  //   const file = this.selectedFiles.item(0);
-  //   this.currentFileUpload = new FileUpload(file);
-  //   this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress)
-  //   this.fileUrl = this.uploadService.photoUrl;
-  // }
 
   pushFileToStorage(fileUpload: FileUpload, progress: {percentage: number}) {
     const storageRef = firebase.storage().ref();
@@ -82,13 +74,23 @@ export class AddAchievementComponent implements OnInit {
 
     // this.photoUrl = this.uploadService.returnPhotoUrl();
     console.log("----theme"+this.form.value.theme);
-    const achievement: AchievementInfo = {
-      theme: this.form.value.theme,
-      text: this.form.value.body,
-      photoUrl: this.photoUrl
-    };
+    if (this.photoUrl) {
+      const achievement: AchievementInfo = {
+        theme: this.form.value.theme,
+        text: this.form.value.body,
+        photoUrl: this.photoUrl
+      };
 
-    this.addAchievement.emit(achievement);
+      this.addAchievement.emit(achievement);
+    } else {
+      const achievement: AchievementInfo = {
+        theme: this.form.value.theme,
+        text: this.form.value.body
+      };
+
+      this.addAchievement.emit(achievement);
+    }
+
   }
 
 }

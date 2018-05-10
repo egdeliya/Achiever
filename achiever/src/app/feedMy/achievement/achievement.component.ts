@@ -9,37 +9,23 @@ import {UserProfile} from "../../models/user-profile";
   styleUrls: ['./achievement.component.css'],
 })
 export class AchievementComponent implements OnInit {
-  // @Input() achievementId: string;
-  // @Input() achPhoto: string;
-  // @Input() authPhoto: string;
-  // @Input() authName: string;
-  // @Input() authLevel: string;
-  // @Input() authLikes: string;
-  // @Input() authId: string;
-  // @Input() text: string;
-  // @Input() index: number;
-  @Input() achievementInfo: AchievementInfo;
-  // @Output() ind = new EventEmitter<number>();
+
+  @Input() achievement: AchievementInfo;
   removed: boolean = false;
-  achievement: AchievementInfo;
   TAG: string = " [AchievementComponent] ";
 
   constructor() {
   }
 
 
+  // TODO
   OnDeleteClick() {
 
-    firebase.database().ref('achievements/'+this.achievementInfo.id)
-      .remove().catch( error => console.log(this.TAG + "failed achievement deletion: " + error));
-    firebase.database().ref('user/' + this.achievementInfo.authorId + '/achievements/' + this.achievementInfo.id)
-      .remove().catch( error => console.log(this.TAG + "failed achievement deletion: " + error));
-    // this.ind.emit(this.index);
     this.removed = true;
   }
 
   ngOnInit() {
-    console.log(this.TAG + "on Init ---->", this.achievementInfo.id);
+    // console.log(this.TAG + "on Init ---->", this.achievement);
   }
 
 }

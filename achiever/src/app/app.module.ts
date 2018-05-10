@@ -28,6 +28,7 @@ import {FeedMyComponent} from "./feedMy/feedMy.component";
 import {AchievementComponent} from "./feedMy/achievement/achievement.component";
 import {AddAchievementComponent} from "./add-achievement/add-achievement.component";
 import {AddAchievementModule} from "./add-achievement/add-achievement.module";
+import {AchievementsService} from "./feedMy/achievements.service";
 // import { AchievementComponent } from './home/achievement/achievement.component';
 
 @NgModule({
@@ -54,7 +55,8 @@ import {AddAchievementModule} from "./add-achievement/add-achievement.module";
   providers: [
     {provide: LOCALE_ID, useValue: 'ru'},
     AuthGuard,
-    AuthService],
+    AuthService,
+    AchievementsService],
   bootstrap: [AppComponent],
   exports: [AppComponent]
 })
