@@ -2,6 +2,11 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 /*------------------page header------------------------*/
+
+body {
+  color: @text-color;
+}
+
 .page_header {
   position: relative;
   display: flex;
@@ -30,6 +35,13 @@
   height: 40px;
 }
 
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: @text-color;
+}
+
 .user-avatar {
   border: 2px solid @border-color;
   border-radius: 50%;
@@ -39,10 +51,7 @@
   height: 35px;
 }
 
-.user-info {
-  display: flex;
-  flex-direction: row;
-}
+
 
 .progress-bar-border {
   width: 100%;

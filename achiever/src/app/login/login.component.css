@@ -1,46 +1,43 @@
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Lobster|Roboto');
-
+/* You can add global styles to this file, and also import other style files */
+body {
+  background: #e3faf5;
+  height: 100%;
+  margin: 0;
+}
+.sidebar {
+  height: auto;
+}
 .container {
   margin-top: 30px;
   margin-bottom: 20px;
   background-color: white;
-  border: solid 1px;
-  border-color: rgb(99, 255, 219);
-  width:350px;
-  position:fixed;
-  max-height: 450px;
-  left:50%;
-  margin-left:-200px;
+  color: #14ccaa;
+  border: solid 1px #14ccaa;
+  width: 200px;
+  height: 90px;
   display: flex;
   align-content: center;
   flex-direction: column;
   align-items: center;
 }
-
 .achiever-icon {
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
 }
-
 .title {
-  /*color: white;*/
   font-family: 'Lobster', cursive;
   text-align: center;
-  margin: 15px;
-  margin-bottom: 40px;
+  margin: 15px 40px;
 }
-
 .description {
   display: flex;
-  /*color: rgb(99, 255, 219);*/
   text-align: center;
   max-width: 200px;
   font-family: 'Gochi Hand', cursive;
   align-content: center;
-  margin: 15px;
-  margin-bottom: 50px;
+  margin: 15px 50px;
 }
-
 .button-google {
   display: flex;
   justify-content: space-around;
@@ -52,20 +49,17 @@
   cursor: pointer;
   outline: none;
 }
-
 .google-icon {
   width: 20px;
   height: 20px;
 }
-
 .sign-in-label-wrapper {
   color: gray;
   font-family: 'Gochi Hand', cursive;
   text-align: center;
 }
-
 @media (max-width: 600px) {
   #page {
-    padding:1em;
+    padding: 1em;
   }
 }

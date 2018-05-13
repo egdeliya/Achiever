@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d3df9a33-6d33-4ca7-ab9d-da3beca1c0c5" name="Default" comment="login page v0">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/add-achievement/add-achievement.component.html" afterPath="$PROJECT_DIR$/achiever/src/app/add-achievement/add-achievement.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/add-achievement/add-achievement.component.ts" afterPath="$PROJECT_DIR$/achiever/src/app/add-achievement/add-achievement.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/app.module.ts" afterPath="$PROJECT_DIR$/achiever/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.html" afterPath="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.ts" afterPath="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.html" afterPath="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.ts" afterPath="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/models/user-profile.ts" afterPath="$PROJECT_DIR$/achiever/src/app/models/user-profile.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/app.component.css" afterPath="$PROJECT_DIR$/achiever/src/app/app.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/app.component.less" afterPath="$PROJECT_DIR$/achiever/src/app/app.component.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.css" afterPath="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.css" afterPath="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/achiever/src/app/login/login.component.css" afterPath="$PROJECT_DIR$/achiever/src/app/login/login.component.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,14 +21,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="feedMy.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="feedMy.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-1056">
               <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
               <folding>
                 <element signature="n#!!block;n#toggleAdd#0;n#FeedMyComponent#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="achievement.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,11 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/achiever/src/app/auth.service.spec.ts" />
-        <option value="$PROJECT_DIR$/achiever/src/app/home/home-routings.module.ts" />
-        <option value="$PROJECT_DIR$/achiever/src/app/home/home-routing.module.ts" />
-        <option value="$PROJECT_DIR$/achiever/src/app/home/file-uploader.service.ts" />
-        <option value="$PROJECT_DIR$/achiever/src/assets/emergency-exit.svg" />
         <option value="$PROJECT_DIR$/achiever/src/assets/open-exit-door.svg" />
         <option value="$PROJECT_DIR$/achiever/src/app/home/add-achievement/add-achievement.component.ts" />
         <option value="$PROJECT_DIR$/achiever/src/app/home/achievement/achievement.component.css" />
@@ -91,7 +93,6 @@
         <option value="$PROJECT_DIR$/achiever/src/app/home/home.component.ts" />
         <option value="$PROJECT_DIR$/achiever/src/app/file-uploader.service.ts" />
         <option value="$PROJECT_DIR$/achiever/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/achiever/src/app/app.component.less" />
         <option value="$PROJECT_DIR$/achiever/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/achiever/src/app/app.routes.ts" />
         <option value="$PROJECT_DIR$/achiever/src/app/auth.guard.service.ts" />
@@ -108,6 +109,12 @@
         <option value="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.ts" />
         <option value="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.html" />
         <option value="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.ts" />
+        <option value="$PROJECT_DIR$/achiever/src/app/login/login.component.less" />
+        <option value="$PROJECT_DIR$/achiever/src/app/app.component.less" />
+        <option value="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.css" />
+        <option value="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.css" />
+        <option value="$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.less" />
+        <option value="$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.less" />
       </list>
     </option>
   </component>
@@ -204,6 +211,33 @@
               <item name="achiever" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="feedMy" type="462c0819:PsiDirectoryNode" />
+              <item name="achievement" type="462c0819:PsiDirectoryNode" />
+              <item name="achievement.component.less" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="Achiever" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Achiever" type="462c0819:PsiDirectoryNode" />
+              <item name="achiever" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="feedMy" type="462c0819:PsiDirectoryNode" />
+              <item name="feedMy.component.less" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="Achiever" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Achiever" type="462c0819:PsiDirectoryNode" />
+              <item name="achiever" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Achiever" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Achiever" type="462c0819:PsiDirectoryNode" />
+              <item name="achiever" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -280,7 +314,8 @@
       <workItem from="1521988605073" duration="407000" />
       <workItem from="1522594528597" duration="11299000" />
       <workItem from="1525888802128" duration="598000" />
-      <workItem from="1525945440345" duration="4698000" />
+      <workItem from="1525945440345" duration="5002000" />
+      <workItem from="1526234135638" duration="1547000" />
     </task>
     <task id="LOCAL-00001" summary="auth v0.1">
       <created>1512497066231</created>
@@ -293,24 +328,24 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201749000" />
+    <option name="totallyTimeSpent" value="203600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="82" y="-11" width="1849" height="1102" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29185268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3359375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44370124" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2374582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23634337" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910814" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -356,17 +391,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/home/feedMy/feedMy.component.css" />
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/home/feedMy/achievement/achievement.component.css" />
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/home/feedMy/achievement/achievement.component.html" />
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/add-achievement/add-achievement.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/home/feedMy/feedMy.component.html" />
     <entry file="file://$PROJECT_DIR$/achiever/src/environments/environment.prod.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -501,20 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/login/login.component.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/app.component.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/achiever/src/app/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -593,14 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/achiever/src/app/auth.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -613,15 +615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="68" lean-forward="false" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,10 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-753">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-            <element signature="e#1597#1634#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -654,11 +643,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-1056">
           <caret line="0" column="19" lean-forward="false" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding>
             <element signature="n#!!block;n#toggleAdd#0;n#FeedMyComponent#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/login/login.component.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/app.component.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/add-achievement/add-achievement.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/feedMy.component.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achiever/src/app/feedMy/achievement/achievement.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

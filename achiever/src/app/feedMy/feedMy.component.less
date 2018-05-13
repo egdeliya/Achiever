@@ -1,19 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-body {
-  background: #e3faf5;
-  height: 100%;
-  margin: 0;
-}
-.sidebar {
-  height: auto;
-}
+@import "../../styles.less";
+
 .container {
   margin: 0;
   margin-top: 10px;
   padding: 0;
-  color: #14ccaa;
+  color: @text-color;
 }
+
 /*----------------------add-achievement---------------*/
+
 .add-achievement {
   display: flex;
   box-shadow: gray;
@@ -24,15 +19,17 @@ body {
   align-content: center;
   justify-content: flex-end;
 }
+
 .add-achievement-btn {
   padding: 2px;
   margin: 0;
   font-size: 1em;
-  color: #63ffdb;
+  color: @main-theme-color;
   max-width: 85px;
   border-left: whitesmoke solid 0.7px;
   outline: none;
 }
+
 .add-achievement-input {
   display: flex;
   margin-right: auto;
@@ -42,8 +39,9 @@ body {
   padding: 0;
   padding-left: 5px;
   outline: none;
-  color: #63ffdb;
+  color: @main-theme-color;
 }
+
 /*----------------------list achievements---------------*/
 .list-group-item-custom {
   list-style: none;
@@ -51,6 +49,7 @@ body {
   padding: 0;
   width: 100%;
 }
+
 .list-group-custom {
   margin: 0;
   padding: 0;
