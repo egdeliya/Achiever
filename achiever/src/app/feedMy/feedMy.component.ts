@@ -41,8 +41,9 @@ export class FeedMyComponent extends FeedBase implements OnInit {
   }
 
   private setAchievementsAsync(achievements: AchievementInfo[]) {
+    // this.achievements = achievements;
     this.achievements = achievements.slice(0).reverse();
-    this.achievements.forEach(achievement => console.log(achievement));
+    // this.achievements.forEach(achievement => console.log(achievement));
 
   }
 
@@ -59,5 +60,10 @@ export class FeedMyComponent extends FeedBase implements OnInit {
       .subscribe((val) => {
         this.toggleAdd();
       });
+  }
+
+  onDeleteAchievement(achievementId: string) {
+    this.achievementsService.deleteAchievement(achievementId, this.currentUser.id).
+      subscribe();
   }
 }

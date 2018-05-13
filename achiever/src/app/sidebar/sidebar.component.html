@@ -6,7 +6,11 @@
   </div>
   <div class="item-wrapper">
     <img class="sidebar-img" src="/assets/friends.svg"/>
-    <span class="sidebar-label">Друзья</span>
+    <a href="#"
+       routerLink="friends"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}"
+       class="sidebar-label">Друзья</a>
   </div>
   <div class="item-wrapper">
     <img class="sidebar-img" src="/assets/news.svg"/>

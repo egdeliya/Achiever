@@ -1,3 +1,4 @@
+<!-- add achievement field-->
 <div class="add-achievement">
   <span class="add-achievement-input"
         (click)="toggleAdd()">
@@ -9,9 +10,13 @@
     {{isAddAchievementOpen ? 'Отменить' : 'Добавить'}}
   </button>
 </div>
+
+<!-- add-achievement component -->
 <div class="container" *ngIf="isAddAchievementOpen">
   <app-add-achievement (addAchievement)="onAddAchievement($event)"></app-add-achievement>
 </div>
+
+<!-- achievements list -->
 <ul class="list-group-custom">
   <li class="list-group-item-custom" *ngFor="let achievement of achievements">
     <app-achievement
