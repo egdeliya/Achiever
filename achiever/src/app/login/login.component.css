@@ -2,6 +2,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background: #e3faf5;
+  color: #14ccaa;
   height: 100%;
   margin: 0;
 }
@@ -14,10 +15,13 @@ body {
   background-color: white;
   color: #14ccaa;
   border: solid 1px #14ccaa;
-  width: 200px;
-  height: 90px;
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin-left: 50%;
   display: flex;
   align-content: center;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
 }
@@ -40,6 +44,8 @@ body {
 }
 .button-google {
   display: flex;
+  margin: 15px;
+  padding: 7px;
   justify-content: space-around;
   align-items: center;
   border-radius: 2px;
@@ -52,6 +58,7 @@ body {
 .google-icon {
   width: 20px;
   height: 20px;
+  margin: 2px;
 }
 .sign-in-label-wrapper {
   color: gray;

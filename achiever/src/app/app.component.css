@@ -2,6 +2,7 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 body {
   background: #e3faf5;
+  color: #14ccaa;
   height: 100%;
   margin: 0;
 }
@@ -86,7 +87,6 @@ body {
 }
 .page_layout__content {
   flex: 1 1 auto;
-  overflow: auto;
   padding-bottom: 20px;
   position: relative;
   margin-left: 20px;
