@@ -3,6 +3,7 @@ import * as firebase from "firebase";
 import {AchievementInfo} from "../../models/achievement-info";
 import {UserProfile} from "../../models/user-profile";
 
+//TODO сделать, чтобы тему и текст достижения нельзя было поменять
 @Component({
   selector: 'app-achievement',
   templateUrl: './achievement.component.html',
@@ -20,7 +21,6 @@ export class AchievementComponent implements OnInit {
 
   // TODO
   OnDeleteClick() {
-
     this.removed = true;
   }
 

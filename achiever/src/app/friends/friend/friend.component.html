@@ -1,3 +1,11 @@
-<p>
-  friend works!
-</p>
+<div class="container">
+  <div class="user-info">
+    <img class="user-avatar" [src]="friend.photoUrl">
+    <div class="user-info-level-wrapper">
+      <span class="user-name">{{friend.name}}</span>
+      <div class="progress-bar-border">
+        <span class="progress">Level</span>
+      </div>
+    </div>
+  </div>
+</div>
