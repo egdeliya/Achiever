@@ -22,6 +22,10 @@ import {AchievementsService} from "./feedMy/achievements.service";
 import {FriendsComponent} from './friends/friends.component';
 import {FriendComponent} from "./friends/friend/friend.component";
 import {FriendsService} from "./friends/friends.service";
+import { SidebarFriendsComponent } from './friends/sidebar-friends/sidebar-friends.component';
+import { MyFriendsComponent } from './friends/my-friends/my-friends.component';
+import { RequestsComponent } from './friends/requests/requests.component';
+import { FindComponent } from './friends/find/find.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import {FriendsService} from "./friends/friends.service";
     FeedMyComponent,
     AchievementComponent,
     FriendsComponent,
-    FriendComponent
+    FriendComponent,
+    SidebarFriendsComponent,
+    MyFriendsComponent,
+    RequestsComponent,
+    FindComponent
   ],
   imports: [
     BrowserModule,

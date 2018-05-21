@@ -31,6 +31,7 @@ export class AuthService {
         }
 
         this.authState = authState;
+
         this.user$.next({
           name: authState.displayName,
           level: 0,

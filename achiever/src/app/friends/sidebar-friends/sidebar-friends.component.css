@@ -1,0 +1,12 @@
+@import "../../sidebar/sidebar.component.css";
+.container {
+  width: 150px;
+}
+.sidebar-label {
+  text-align: center;
+  padding-top: 2px;
+  margin-left: 10px;
+  padding-bottom: 2px;
+  outline: none;
+  color: #14ccaa;
+}

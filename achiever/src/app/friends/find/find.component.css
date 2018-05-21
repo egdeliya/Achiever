@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background: #e3faf5;
+  color: #14ccaa;
+  height: 100%;
+  margin: 0;
+}
+.sidebar {
+  height: auto;
+}
+/* -----------------search field------------- */
+.search-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+}
+.search-field-btn {
+  color: #63ffdb;
+  max-width: 85px;
+  outline: none;
+}
+.search-field-img {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 35px;
+  width: 35px;
+}
+.search-field-input {
+  border: none;
+  box-shadow: none;
+  color: #14ccaa;
+  border-bottom: whitesmoke solid 1px;
+  background-image: url(../../../assets/search.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 35px 35px;
+}
+.search-field-input:focus {
+  border-bottom: #63ffdb solid 1px;
+}
+.search-field-input::placeholder {
+  color: #63ffdb;
+}

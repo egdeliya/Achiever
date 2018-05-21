@@ -1,7 +1,15 @@
-<ul class="list-group-custom">
-  <li class="list-group-item-custom" *ngFor="let friend of friends">
-    <app-friend
-      [friend]="friend">
-    </app-friend>
-  </li>
-</ul>
+<!-------------------page layout----------------->
+<div class="page_layout">
+
+  <!-------------------page content----------------->
+  <div class="page_layout__content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-------------------page side bar----------------->
+  <div class="page_layout__side" *ngIf="authService.authenticated">
+    <app-sidebar-friends></app-sidebar-friends>
+  </div>
+
+
+</div>

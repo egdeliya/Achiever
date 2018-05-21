@@ -14,14 +14,14 @@ export class AchievementsService {
   }
 
   getAchievementsForUser(userId: string): Observable<AchievementInfo[]> {
-    console.log("userId -----> " + userId);
+    // console.log("userId -----> " + userId);
     return this.db.list(`usersPerAchievements/${userId}`)
       .snapshotChanges()
       .map(snapshot =>
         snapshot.map(({key}) => key)
       )
       .switchMap(achievementsKeys => {
-        console.log("achievementsKeys -------> " + achievementsKeys);
+        // console.log("achievementsKeys -------> " + achievementsKeys);
         if (achievementsKeys.length === 0) {
           return Observable.of([]);
         }
