@@ -1,3 +1,23 @@
-<p>
-  my-friends works!
-</p>
+<!-- search field -->
+<div class="search-field">
+  <input type="text"
+         class="search-field-input"
+         placeholder="Найти друзей..."
+         (keyup)="onKeyUp($event)">
+  <!--<button class="search-field-btn" (click)="onNameTyped()">-->
+  <!--<img class="search-field-img" src="/assets/search.svg"/>-->
+  <!--</button>-->
+</div>
+
+<!-- friends list -->
+<ul class="list-group-custom">
+  <li class="list-group-item-custom" *ngFor="let friend of friends">
+    <app-friend
+      [friend]="friend"
+      [btnLabel]="btnLabel"
+      (friendId)= "onDeleteFriend($event)">
+    </app-friend>
+
+  </li>
+</ul>
+
