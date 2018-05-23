@@ -1,1 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Lobster|Roboto');
+
+@import "../../../styles.less";
 @import "../../feedMy/achievement/achievement.component.less";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+  margin: 5px;
+  height: 30px;
+  border-radius: 2px;
+  background-color: @main-theme-color;
+  border: none;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: lighten(@main-theme-color, 10%);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-label-wrapper {
+  color: @text-color;
+  font-family: 'Gochi Hand', Roboto;
+  //text-align: center;
+}

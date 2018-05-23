@@ -8,12 +8,64 @@ body {
 .sidebar {
   height: auto;
 }
+.container {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  color: #14ccaa;
+}
+/*----------------------add-achievement---------------*/
+.add-achievement {
+  display: flex;
+  box-shadow: gray;
+  border-radius: 2px;
+  background-color: white;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+}
+.add-achievement-btn {
+  padding: 2px;
+  margin: 0;
+  font-size: 1em;
+  color: #63ffdb;
+  max-width: 85px;
+  border-left: whitesmoke solid 0.7px;
+  outline: none;
+}
+.add-achievement-input {
+  display: flex;
+  margin-right: auto;
+  width: 100%;
+  align-items: center;
+  border: none;
+  padding: 0;
+  padding-left: 5px;
+  outline: none;
+  color: #63ffdb;
+}
+/*----------------------list achievements---------------*/
+.list-group-item-custom {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.list-group-custom {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 /* -----------------search field------------- */
 .search-field {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
   justify-content: flex-end;
 }
 .search-field-btn {
@@ -32,6 +84,7 @@ body {
   box-shadow: none;
   color: #14ccaa;
   border-bottom: whitesmoke solid 1px;
+  margin: 0;
   background-image: url(../../../assets/search.svg);
   background-repeat: no-repeat;
   background-position: right;
@@ -43,3 +96,4 @@ body {
 .search-field-input::placeholder {
   color: #63ffdb;
 }
+/* -------------- friend item ----------------- */

@@ -9,18 +9,13 @@ export class FriendsService {
   constructor(private db: AngularFireDatabase) {
   }
 
-  getFriendsForUser(userId: string): Observable<any> {
-    console.log("userId -----> " + userId);
-    return this.db.list(`users`)
-      .snapshotChanges()
-      .map(snapshot =>
-        snapshot.filter(({key}) => key !== userId)
-      );
-  }
+  addFriend(friendId: string, userId: string): Observable<void>{
 
-  addFriend(friendId: string, userId: string): Observable<any> {
-    const promise = this.db.list(`usersPerFriends/${userId}/${friendId}`).push(true);
-    return Observable.of(promise);
+    return Observable.of(this.db.object(`usersPerFriends/${userId}/`)
+      .update({[friendId]: true}))
+      .switchMap(() => {
+        return this.db.object(`friendRequests/${friendId}`).update({[userId]: true});
+      });
   }
 
   // editPurchase(purchase: Purchase) {

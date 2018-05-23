@@ -26,6 +26,7 @@ import { SidebarFriendsComponent } from './friends/sidebar-friends/sidebar-frien
 import { MyFriendsComponent } from './friends/my-friends/my-friends.component';
 import { RequestsComponent } from './friends/requests/requests.component';
 import { FindComponent } from './friends/find/find.component';
+import {FindFriendsService} from "./friends/find-friends.service";
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { FindComponent } from './friends/find/find.component';
     {provide: LOCALE_ID, useValue: 'ru'},
     AuthGuard,
     AuthService,
+    FindFriendsService,
     AchievementsService,
     FriendsService],
   bootstrap: [AppComponent],
