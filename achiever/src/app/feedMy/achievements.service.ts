@@ -6,6 +6,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/combineLatest';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
+import anything = jasmine.anything;
 
 @Injectable()
 export class AchievementsService {
@@ -38,26 +39,59 @@ export class AchievementsService {
       });
   }
 
-  addAchievement(achievement: AchievementInfo, userId: string): Observable<void> {
+  addAchievement(achievement: AchievementInfo, userId: string){
     const promise = this.db.list('achievements').push(achievement);
 
     return Observable.of(promise)
       .switchMap(({key}) => {
-        return this.db.object(`usersPerAchievements/${userId}`)
-          .update({[key]: true});
-      });
-  }
+        this.db.object(`usersPerAchievements/${userId}`)
+          .update({[key]: true}).catch(err => console.log(err));
 
-  // editPurchase(purchase: Purchase) {
-  //   const id = purchase.id;
-  //
-  //   delete purchase.id;
-  //   this.db.object(`purchases/${id}`).update(purchase);
-  // }
+        return this.db.list(`usersPerFriends/${userId}`)
+          .snapshotChanges()
+          .map(snapshot =>
+            snapshot.map(({key}) => key)
+          )
+          .switchMap(friendsKeys => {
+            // console.log("achievementsKeys -------> " + achievementsKeys);
+            if (friendsKeys.length === 0) {
+              return Observable.of(null);
+            }
+
+            friendsKeys.map(
+              friendKey =>
+                this.db.object(`usersPerAchievements/${friendKey}`)
+                  .update({[key]: true}));
+
+            return;
+          })
+      })
+  }
 
   deleteAchievement(achievementId: string, userId: string): Observable<void> {
     return Observable.of(this.db.object(`usersPerAchievements/${userId}/${achievementId}`).remove())
-      .switchMap(() => this.db.object(`achievements/${achievementId}`).remove());
+      .switchMap(() => this.db.object(`achievements/${achievementId}`).remove())
+      .switchMap(() => {
+
+        return this.db.list(`usersPerFriends/${userId}`)
+          .snapshotChanges()
+          .map(snapshot =>
+            snapshot.map(({key}) => key)
+          )
+          .switchMap(friendsKeys => {
+            // console.log("achievementsKeys -------> " + achievementsKeys);
+            if (friendsKeys.length === 0) {
+              return Observable.of(null);
+            }
+
+            friendsKeys.map(
+              friendKey =>
+                this.db.object(`usersPerAchievements/${friendKey}/${achievementId}`)
+                  .remove());
+
+            return;
+          })
+      });
   }
 
 }

@@ -1,3 +1,12 @@
-<p>
-  requests works!
-</p>
+<!-- friends list -->
+<ul class="list-group-custom">
+  <li class="list-group-item-custom" *ngFor="let friend of friends">
+    <app-friend
+      [friend]="friend"
+      [btnLabel]="btnLabel"
+      (friendId)= "onAcceptFriend($event)">
+    </app-friend>
+
+  </li>
+</ul>
+

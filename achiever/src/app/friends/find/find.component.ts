@@ -19,9 +19,11 @@ export class FindComponent implements OnInit {
               private friendsService: FriendsService,
               private authService: AuthService) {
     this.curUserId = this.authService.currentUserId;
+    this.friendName = "";
   }
 
   ngOnInit() {
+    this.friendName = "";
     this.setFriends(this.friendName);
   }
 
@@ -49,5 +51,7 @@ export class FindComponent implements OnInit {
   onAddFriend(event: string) {
     this.friendsService.addFriend(event, this.curUserId)
       .subscribe();
+
+    this.setFriends(this.friendName);
   }
 }

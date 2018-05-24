@@ -24,11 +24,11 @@ export class MyFriendsComponent implements OnInit {
   }
 
   onKeyUp(event: any) {
-    console.log(this.friendName);
+    // console.log(this.friendName);
     this.friendName = event.target.value;
 
     if (this.friendName) {
-      console.log("hey!");
+      // console.log("hey!");
       this.friends = this.friends.filter(friendProfile => {
         return friendProfile.name.includes(this.friendName)
       })
@@ -54,7 +54,7 @@ export class MyFriendsComponent implements OnInit {
 
   onDeleteFriend(event: string) {
     this.friendsService.deleteFriend(event, this.curUserId)
-      .catch(er => console.log(er));
-    this.getFriends(this.curUserId);
+      .subscribe();
+    // this.getFriends(this.curUserId);
   }
 }
