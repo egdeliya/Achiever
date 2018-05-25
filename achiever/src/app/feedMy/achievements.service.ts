@@ -55,7 +55,8 @@ export class AchievementsService {
           return Observable.of([]);
         }
 
-        const observables = achievementsKeys.map(
+        // const observables =
+        return  Observable.of(achievementsKeys.map(
           achievementKey =>
             this.db.object(`achievements/${achievementKey}`)
               .snapshotChanges()
@@ -68,9 +69,9 @@ export class AchievementsService {
                 return achievement.authorId === userId;
               })
 
-        );
+        ));
 
-        return Observable.combineLatest<AchievementInfo>(observables);
+        // return Observable.combineLatest<AchievementInfo>(observables);
       });
   }
 
