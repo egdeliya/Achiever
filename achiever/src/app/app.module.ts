@@ -16,7 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {SidebarComponent} from './sidebar/sidebar.component';
 import {FeedMyComponent} from "./feedMy/feedMy.component";
-import {AchievementComponent} from "./feedMy/achievement/achievement.component";
+import {AchievementComponent} from "./achievement/achievement.component";
 import {AddAchievementModule} from "./add-achievement/add-achievement.module";
 import {AchievementsService} from "./feedMy/achievements.service";
 import {FriendsComponent} from './friends/friends.component';
@@ -27,6 +27,7 @@ import { MyFriendsComponent } from './friends/my-friends/my-friends.component';
 import { RequestsComponent } from './friends/requests/requests.component';
 import { FindComponent } from './friends/find/find.component';
 import {FindFriendsService} from "./friends/find-friends.service";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {FindFriendsService} from "./friends/find-friends.service";
     SidebarFriendsComponent,
     MyFriendsComponent,
     RequestsComponent,
-    FindComponent
+    FindComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

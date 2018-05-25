@@ -1,0 +1,35 @@
+<div class="container" *ngIf="!removed">
+
+  <div class="user-info">
+    <img class="user-avatar" [src]="achievement.authPhoto">
+    <div class="user-info-level-wrapper">
+      <span class="user-name">{{achievement.authorName}}</span>
+      <div class="progress-bar-border">
+        <span class="progress">Level</span>
+      </div>
+    </div>
+
+    <img *ngIf="isMyAchievement" src="/assets/delete.svg" class="delete-btn" (click)="OnDeleteClick()"/>
+
+  </div>
+
+  <!-- achievement theme -->
+  <p class="content-wrapper">
+    <span style="color: aquamarine">Тема: </span>
+    {{achievement.theme}}
+  </p>
+
+  <img *ngIf="achievement.photoUrl" [src]="achievement.photoUrl"
+       style="max-width: 300px;  max-height: 300px; margin-left: 30%" class="achievements-content"/>
+
+  <p class="content-wrapper">{{achievement.text}}</p>
+
+  <!-- hard coded like image :( -->
+  <img style="height: 20px; width: 20px; margin-left: 95%"
+       *ngIf="isMyAchievement" src="/assets/heart.svg">
+  <img style="height: 20px; width: 20px; margin-left: 95%"
+       *ngIf="!isMyAchievement && !isLiked" src="/assets/heart.svg" (click)="OnLikeClick()">
+  <img style="height: 20px; width: 20px; margin-left: 95%"
+       *ngIf="!isMyAchievement && isLiked" src="/assets/heart.png">
+
+</div>

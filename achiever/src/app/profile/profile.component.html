@@ -1,3 +1,15 @@
+<div class="user-info" *ngIf="authService.authenticated">
+    <img class="user-avatar" [src]="(authService.user$| async)?.photoUrl">
+
+  <div class="user-info-level-wrapper">
+    <span class="user-name">{{(authService.user$| async)?.name}}</span>
+    <div class="progress-bar-border">
+      <span class="progress">Level</span>
+    </div>
+  </div>
+
+</div>
+
 <!-- add achievement field-->
 <div class="add-achievement">
   <span class="add-achievement-input"
@@ -21,7 +33,11 @@
   <li class="list-group-item-custom" *ngFor="let achievement of achievements">
     <app-achievement
       [achievement]="achievement"
-      [isMyAchievement]="false">
+      [isMyAchievement]="true">
     </app-achievement>
   </li>
 </ul>
+
+
+
+

@@ -1,9 +1,15 @@
 
 <div class="sidenav container">
+
   <div class="item-wrapper">
     <img class="sidebar-img" src="/assets/icon-home.svg"/>
-    <span class="sidebar-label">Профиль</span>
+    <a href="#"
+       routerLink="profile"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}"
+       class="sidebar-label">Профиль</a>
   </div>
+
   <div class="item-wrapper">
     <img class="sidebar-img" src="/assets/friends.svg"/>
     <a href="#"
@@ -12,6 +18,7 @@
        [routerLinkActiveOptions]="{exact: true}"
        class="sidebar-label">Друзья</a>
   </div>
+
   <div class="item-wrapper">
     <img class="sidebar-img" src="/assets/news.svg"/>
     <a href="#"
@@ -20,6 +27,7 @@
        [routerLinkActiveOptions]="{exact: true}"
       class="sidebar-label">Новости</a>
   </div>
+
   <div class="item-wrapper">
     <img class="sidebar-img" src="/assets/settings.svg"/>
     <span  class="sidebar-label">Настройки</span>

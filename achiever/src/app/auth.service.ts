@@ -34,10 +34,10 @@ export class AuthService {
 
         this.user$.next({
           name: authState.displayName,
-          level: 0,
+          // level: 0,
           id: authState.uid,
           photoUrl: authState.photoURL,
-          numberApprovedPosts: 0
+          // numberApprovedPosts: 0
         });
 
         this.updateUserData();
@@ -116,10 +116,10 @@ export class AuthService {
     let path = `users/${this.currentUserId}`;
     let data = {
       name: this.authState.displayName,
-      level: 0,
+      // level: 0,
       id: this.authState.uid,
       photoUrl: this.authState.photoURL,
-      numberApprovedPosts: 0
+      // numberApprovedPosts: 0
     };
 
     this.firebaseDataBase.object(path).update(data)

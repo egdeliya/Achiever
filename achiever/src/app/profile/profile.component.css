@@ -1,0 +1,101 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background: #e3faf5;
+  color: #14ccaa;
+  height: 100%;
+  margin: 0;
+}
+.sidebar {
+  height: auto;
+}
+.user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #14ccaa;
+  background-color: white;
+  height: 150px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+.user-avatar {
+  margin-left: 5px;
+  width: 130px;
+  height: 130px;
+}
+.user-info-level-wrapper {
+  margin-left: 40px;
+}
+.progress-bar-border {
+  margin-top: 10px;
+  width: 100%;
+  border: solid #14ccaa;
+  border-radius: 4px;
+  height: 30px;
+}
+.progress {
+  width: 25%;
+  height: 100%;
+  border: none;
+  border-radius: 0px;
+  text-align: center;
+  font-size: medium;
+  align-content: center;
+  color: #63ffdb;
+  background-color: #14ccaa;
+}
+.user-name {
+  max-width: 100px;
+  overflow: inherit;
+  font-family: 'Gochi Hand', cursive;
+  font-size: x-large;
+}
+.container {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  color: #14ccaa;
+}
+/*----------------------add-achievement---------------*/
+.add-achievement {
+  display: flex;
+  box-shadow: gray;
+  border-radius: 2px;
+  background-color: white;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+}
+.add-achievement-btn {
+  padding: 2px;
+  margin: 0;
+  font-size: 1em;
+  color: #63ffdb;
+  max-width: 85px;
+  border-left: whitesmoke solid 0.7px;
+  outline: none;
+}
+.add-achievement-input {
+  display: flex;
+  margin-right: auto;
+  width: 100%;
+  align-items: center;
+  border: none;
+  padding: 0;
+  padding-left: 5px;
+  outline: none;
+  color: #63ffdb;
+}
+/*----------------------list achievements---------------*/
+.list-group-item-custom {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.list-group-custom {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

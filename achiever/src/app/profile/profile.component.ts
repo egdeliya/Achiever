@@ -1,25 +1,23 @@
-import {Component, OnInit} from '@angular/core';
-import {FeedBase} from "../feed.base";
-import {AchievementInfo} from "../models/achievement-info";
+import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../auth.service";
-import {AchievementsService} from "./achievements.service";
+import {AchievementInfo} from "../models/achievement-info";
+import {AchievementsService} from "../feedMy/achievements.service";
 import {UserProfile} from "../models/user-profile";
 
 @Component({
-  selector: 'app-feed',
-  templateUrl: './feedMy.component.html',
-  styleUrls: ['./feedMy.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class FeedMyComponent extends FeedBase implements OnInit {
+export class ProfileComponent implements OnInit {
 
   currentUser: UserProfile;
   achievements: AchievementInfo[] = [];
-  TAG: string = " [ FeedMyComponent] ";
+  TAG: string = " [ ProfileComponent] ";
   isAddAchievementOpen: boolean = false;
 
   constructor(private authService: AuthService,
               private achievementsService: AchievementsService) {
-    super();
   }
 
   ngOnInit() {
@@ -33,8 +31,9 @@ export class FeedMyComponent extends FeedBase implements OnInit {
   }
 
   setAchievements() {
+    console.log("------- HEY -------------");
 
-    this.achievementsService.getAchievementsForUser(this.currentUser.id)
+    this.achievementsService.getUsersAchievements(this.currentUser.id)
       .subscribe((achievements) => {
         this.setAchievementsAsync(achievements);
       });
@@ -42,8 +41,10 @@ export class FeedMyComponent extends FeedBase implements OnInit {
 
   private setAchievementsAsync(achievements: AchievementInfo[]) {
     // this.achievements = achievements;
+    console.log("------- HEY -------------");
+    achievements.forEach(ach => console.log(ach));
     this.achievements = achievements.slice(0).reverse();
-    // this.achievements.forEach(achievement => console.log(achievement));
+    this.achievements.forEach(achievement => console.log(achievement));
 
   }
 
@@ -55,11 +56,11 @@ export class FeedMyComponent extends FeedBase implements OnInit {
     newAchievement.authorId = this.currentUser.id;
     newAchievement.authPhoto = this.currentUser.photoUrl;
     newAchievement.authorName = this.currentUser.name;
-    newAchievement.likesNumber = 0;
 
     this.achievementsService.addAchievement(newAchievement, this.currentUser.id)
-      .subscribe(() => {
+      .subscribe((val) => {
         this.toggleAdd();
       });
   }
+
 }

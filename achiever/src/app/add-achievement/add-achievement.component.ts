@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from "@angular/forms";
 import {AchievementInfo} from "../models/achievement-info";
-import {FileUploaderService} from "../file-uploader.service";
 import {FileUpload} from "../file-upload";
 import * as firebase from "firebase";
 

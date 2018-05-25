@@ -1,0 +1,60 @@
+@import "../../styles.less";
+
+//.body {
+//  width: 50%;
+//}
+
+// ---------- user info ------------
+.user-info {
+  display: flex;
+  flex-direction: row;
+  //align-items: center;
+  justify-content: flex-start;
+  color: @text-color;
+  background-color: white;
+  height: 150px;
+  //width: 70%;
+  padding-top: 5px;
+  margin-bottom: 5px;
+}
+
+.user-avatar {
+  margin-left: 5px;
+  //margin-right: 10px;
+  width: 130px;
+  height: 130px;
+}
+
+.user-info-level-wrapper {
+  margin-left: 40px;
+}
+
+.progress-bar-border {
+  margin-top: 10px;
+  width: 100%;
+  border: solid rgb(20, 204, 170);
+  border-radius: 4px;
+  height: 30px;
+}
+
+.progress{
+  width: 25%;
+  height: 100%;
+  border: none;
+  border-radius: 0px;
+  text-align: center;
+  font-size: medium;
+  align-content: center;
+  color: @main-theme-color;
+  background-color: @border-color;
+}
+
+.user-name {
+  max-width: 100px;
+  overflow: inherit;
+  font-family: 'Gochi Hand', cursive;
+  font-size: x-large;
+}
+
+// ---- user achievements -----------------
+@import "../feedMy/feedMy.component.less";

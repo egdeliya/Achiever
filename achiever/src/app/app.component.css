@@ -49,21 +49,22 @@ body {
   border-radius: 50%;
   margin-left: 10px;
   margin-right: 10px;
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
 }
 .progress-bar-border {
   width: 100%;
   border: solid #14ccaa;
   border-radius: 3px;
-  height: 20px;
+  height: 15px;
 }
 .progress {
   width: 25%;
-  height: 100%;
+  height: 13px;
   border: none;
   border-radius: 0px;
-  text-align: center;
+  font-size: smaller;
+  text-align: start;
   align-content: center;
   color: #63ffdb;
   background-color: #14ccaa;
