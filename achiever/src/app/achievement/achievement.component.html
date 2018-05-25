@@ -27,9 +27,11 @@
   <!-- hard coded like image :( -->
   <img style="height: 20px; width: 20px; margin-left: 95%"
        *ngIf="isMyAchievement" src="/assets/heart.svg">
-  <img style="height: 20px; width: 20px; margin-left: 95%"
-       *ngIf="!isMyAchievement && !isLiked" src="/assets/heart.svg" (click)="OnLikeClick()">
-  <img style="height: 20px; width: 20px; margin-left: 95%"
-       *ngIf="!isMyAchievement && isLiked" src="/assets/heart.png">
+  <div *ngIf="!isMyAchievement" >
+    <img *ngIf="!isLiked" style="height: 20px; width: 20px; margin-left: 95%"
+         src="/assets/heart.svg" (click)="OnLikeClick()">
+    <img *ngIf="isLiked" style="height: 20px; width: 20px; margin-left: 95%"
+         src="/assets/heart.png">
+  </div>
 
 </div>

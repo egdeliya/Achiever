@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   TAG: string = " [ ProfileComponent] ";
   isAddAchievementOpen: boolean = false;
 
-  constructor(private authService: AuthService,
+  constructor(public authService: AuthService,
               private achievementsService: AchievementsService) {
   }
 
@@ -42,8 +42,9 @@ export class ProfileComponent implements OnInit {
   private setAchievementsAsync(achievements: AchievementInfo[]) {
     // this.achievements = achievements;
     console.log("------- HEY -------------");
-    achievements.forEach(ach => console.log(ach));
-    this.achievements = achievements.slice(0).reverse();
+    // achievements.forEach(ach => console.log(ach));
+    this.achievements = achievements.slice(0).reverse()
+      .filter(ach => ach.authorId == this.currentUser.id);
     this.achievements.forEach(achievement => console.log(achievement));
 
   }

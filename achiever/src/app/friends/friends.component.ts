@@ -15,7 +15,7 @@ export class FriendsComponent implements OnInit {
   friendName: string;
   TAG: string = " [ FriendsComponent] ";
 
-  constructor(private authService: AuthService,
+  constructor(public authService: AuthService,
               private friendsService: FriendsService) {
   }
 

@@ -43,35 +43,33 @@ export class AchievementsService {
   }
 
   getUsersAchievements(userId: string): Observable<AchievementInfo[]> {
-    console.log("userId -----> " + userId);
+    // console.log("userId -----> " + userId);
+
     return this.db.list(`usersPerAchievements/${userId}`)
       .snapshotChanges()
       .map(snapshot =>
         snapshot.map(({key}) => key)
       )
       .switchMap(achievementsKeys => {
-        console.log("achievementsKeys -------> " + achievementsKeys);
+        // console.log("achievementsKeys -------> " + achievementsKeys);
         if (achievementsKeys.length === 0) {
           return Observable.of([]);
         }
 
-        // const observables =
-        return  Observable.of(achievementsKeys.map(
-          achievementKey =>
+        const observables = achievementsKeys.map
+        (achievementKey =>
             this.db.object(`achievements/${achievementKey}`)
               .snapshotChanges()
-              .map(({key, payload}) => {
-                return ({...payload.val(), id: key})
-              })
-              .filter(achievement => {
-                console.log("----------ach  " + achievement.authorId);
-                console.log(achievement.authorId === userId);
-                return achievement.authorId === userId;
-              })
+              .map(({key, payload}) => ({...payload.val(), id: key}))
+              // .filter(achievement =>
+                // console.log("----------ach  " + achievement.authorId);
+                // console.log(achievement.authorId === userId);
+                // achievement.authorId === userId
+              // )
+          // }
+        );
 
-        ));
-
-        // return Observable.combineLatest<AchievementInfo>(observables);
+        return Observable.combineLatest<AchievementInfo>(observables);
       });
   }
 
@@ -106,7 +104,9 @@ export class AchievementsService {
 
   deleteAchievement(achievementId: string, userId: string): Observable<void> {
     return Observable.of(this.db.object(`usersPerAchievements/${userId}/${achievementId}`).remove())
-      .switchMap(() => this.db.object(`achievements/${achievementId}`).remove())
+      .switchMap(() =>
+        this.db.object(`achievements/${achievementId}`).remove()
+      )
       .switchMap(() => {
 
         return this.db.list(`usersPerFriends/${userId}`)
@@ -120,12 +120,12 @@ export class AchievementsService {
               return Observable.of(null);
             }
 
-            friendsKeys.map(
+            return Observable.of(friendsKeys.map(
               friendKey =>
                 this.db.object(`usersPerAchievements/${friendKey}/${achievementId}`)
-                  .remove());
+                  .remove()));
 
-            return;
+            // return;
           })
       });
   }
