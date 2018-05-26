@@ -30,10 +30,12 @@ export class AchievementComponent implements OnInit {
   }
 
   OnLikeClick() {
-    this.isLiked = true;
-    console.log(!this.isMyAchievement && this.isLiked);
-    this.achievementsService.likeAchievement(this.achievement, this.authService.currentUserId)
-      .subscribe();
+    if (!this.isLiked) {
+      this.isLiked = true;
+      console.log(!this.isMyAchievement && this.isLiked);
+      this.achievementsService.likeAchievement(this.achievement, this.authService.currentUserId)
+        .subscribe();
+    }
   }
 
   ngOnInit() {
